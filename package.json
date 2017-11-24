@@ -28,6 +28,8 @@
     "eslint-plugin-import": "^1.11.1",
     "exports-loader": "^0.6.3",
     "file-loader": "^0.11.1",
+    "fitter-happier-text": "0.0.7",
+    "fitty": "^2.2.5",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-postcss": "^6.1.1",
@@ -38,7 +40,9 @@
     "postcss-cssnext": "^2.7.0",
     "postcss-import": "^10.0.0",
     "url-loader": "^0.5.7",
-    "webpack": "3.6.0",
-    "whatwg-fetch": "^1.0.0"
+    "webpack": "3.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0"
   }
 }

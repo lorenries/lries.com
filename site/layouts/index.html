@@ -1,9 +1,57 @@
 {{ partial "header" . }}
 
-<h1>Hugo with Gulp, PostCSS and Webpack</h1>
+{{ partial "nav" . }}
 
-<p>
-  Hooray 🎉 - you've built this with <a href="https://github.com/netlify/victor-hugo">Victor-Hugo</a>!
-</p>
+<div class="center mw9">
+
+	<header class="svg-clip tc lh-solid pv4 pv5-ns center gotham">
+
+		<!-- <h1 class="fit w-80 w-70-ns">Hi, I'm Loren</h1> -->
+
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 328 45" class="w-90 w-80-m w-70-l">
+		  <text fill="currentColor" fill-rule="evenodd" transform="translate(-1)" font-size="50" font-family="Gotham Ultra" font-weight="600">
+		    <tspan x="0" y="36">Hi, I’m Loren</tspan>
+		  </text>
+		</svg>
+
+	</header>
+
+	<section class="w-90 w-80-m w-70-l center pb3 pb4-ns">
+		<div class="tl f4 lh-copy">
+			{{.Content}}
+		</div>
+	</section>
+
+	<section class="w-90 w-80-m w-70-l center pb3 pb4-ns flex justify-between flex-wrap">
+		
+	<div class="w-100 w-50-l pr0 pr3-l">
+		<h2 class="f3 gotham">Writing</h2>
+		
+		<ul class="list ma0 pa0">
+			<li class="ma0 pb1 mb3 f4 no-underline bb"><a href="#" class="no-underline dim">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
+			<li class="ma0 pb1 mb3 f4 no-underline bb"><a href="#" class="no-underline">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
+			<li class="ma0 pb1 mb3 f4 no-underline bb"><a href="#" class="no-underline">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
+		</ul>
+	</div>
+
+	<div class="w-100 w-50-l pl0 pl3-l">
+		<h2 class="f3 gotham">Projects</h2>
+		
+		<ul class="list ma0 pa0">
+			<li class="ma0 pb1 mb3 f4 no-underline bb"><a href="#" class="no-underline">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
+			<li class="ma0 pb1 mb3 f4 no-underline bb"><a href="#" class="no-underline">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
+			<li class="ma0 pb1 mb3 f4 no-underline bb"><a href="#" class="no-underline">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
+		</ul>
+	</div>
+
+	</section>
+
+	<section class="w-90 w-80-m w-70-l center pb3 pb4-ns">
+		<h2 class="f3 gotham">Get in touch</h2>
+		<p class="f4">You can reach me at <span id="hidden"></span>. My public key is on <a href="https://keybase.io/lries" class="underline">Keybase</a> if you need it.</p>
+		{{ partial "contact" . }}
+	</section>
+
+</div>
 
 {{ partial "footer" . }}

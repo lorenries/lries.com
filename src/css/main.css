@@ -1,14 +1,44 @@
 /*
   You can use import statements to include partials:
  */
-@import "imports/reset.css";
-
+@import "imports/tachyons.min.css";
 
 /*
-  Or add your statements here:
+  Custom Styles:
  */
-body{
-  font-family: sans-serif;
-  font-size: 1em;
-  text-align: center;
+
+:root {
+	--main: #111;
+	--bg: #f1f1f1;
+ }
+
+ @font-face {
+  font-family: "Gotham Ultra";
+  src: url("/assets/fonts/gotham-ultra.woff") format("woff");
+ }
+
+ .gotham {
+ 	font-family: 'Gotham Ultra', avenir, sans-serif;
+ }
+
+.main {
+	color: var(--main);
+}
+
+.bg {
+	background-color: var(--bg);
+}
+
+.fit {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.ant {
+	/*color: #357EDD*/
+}
+
+a {
+	color: var(--main);
+	text-decoration: underline;
 }

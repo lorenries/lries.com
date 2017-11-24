@@ -1,2 +1,7 @@
 node_modules/
 dist/
+.DS_Store
+site/.DS_Store
+src/.DS_Store
+src/css/.DS_Store
+site/static/.DS_Store
