@@ -39,13 +39,13 @@
     "postcss-cssnext": "^2.7.0",
     "postcss-import": "^10.0.0",
     "url-loader": "^0.5.7",
-    "webpack": "3.6.0"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
+    "webpack": "3.6.0",
     "postcss-clean": "^1.1.0",
     "postcss-uncss": "^0.16.1",
     "uglifyjs-webpack-plugin": "^1.1.2",
-    "uncss": "^0.16.1"
+    "uncss": "^0.16.1",
+    "babel-core": "^6.26.0"
+  },
+  "devDependencies": {
   }
 }
