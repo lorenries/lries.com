@@ -9,6 +9,8 @@ import BrowserSync from "browser-sync";
 import watch from "gulp-watch";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
+import clean from "postcss-clean";
+import uncss from "postcss-uncss";
 
 const browserSync = BrowserSync.create();
 
@@ -24,10 +26,10 @@ gulp.task("hugo-preview", (cb) => buildSite(cb, hugoArgsPreview));
 gulp.task("build", ["css", "js"], (cb) => buildSite(cb, [], "production"));
 gulp.task("build-preview", ["css", "js"], (cb) => buildSite(cb, hugoArgsPreview, "production"));
 
-// Compile CSS with PostCSS
+// Compile CSS with PostCSS0
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
-    .pipe(postcss([cssImport({from: "./src/css/main.css"})]))
+    .pipe(postcss([cssImport({from: "./src/css/main.css"}), uncss({html: ["./dist/*.html", "./dist/**/*.html", "./dist/**/**/*.html"]}), clean()]))
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream())
 ));

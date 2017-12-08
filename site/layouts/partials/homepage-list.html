@@ -1,0 +1,9 @@
+<div class="w-100 pb3">
+	<h2 class="f3 gotham">{{ .name }}</h2>
+	
+	<ul class="list ma0 pa0">
+		{{ range first 5 (where .context.Data.Pages "Section" .section) }}
+		    <li class="ma0 pb1 mb3 f4 no-underline bb"><a href="{{.URL}}" class="no-underline dim">{{.Title}}</a></li>
+		{{ end }}
+	</ul>
+</div>
