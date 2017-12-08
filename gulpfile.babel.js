@@ -29,7 +29,7 @@ gulp.task("build-preview", ["css", "js"], (cb) => buildSite(cb, hugoArgsPreview,
 // Compile CSS with PostCSS0
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
-    .pipe(postcss([cssImport({from: "./src/css/main.css"}), uncss({html: ["./dist/*.html", "./dist/**/*.html", "./dist/**/**/*.html"]}), clean()]))
+    .pipe(postcss([cssImport({from: "./src/css/main.css"}), uncss({html: ["./site/layouts/*.html", "./site/layouts/**/*.html"]}), clean()]))
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream())
 ));
