@@ -58,3 +58,10 @@ a:hover, a:focus {
 	opacity: .5;
 	transition: opacity .15s ease-in;
 }
+
+/*uncss:ignore*/
+.highlight {
+	padding: 1rem;
+	overflow: scroll;
+	border-radius: 3px;
+}

@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "hugo": "gulp hugo",
-    "build": "gulp css && gulp js && hugo -d '../dist' -s 'site'",
+    "build": "gulp build",
     "build-preview": "gulp build-preview",
     "start": "gulp server",
     "lint": "eslint src"
