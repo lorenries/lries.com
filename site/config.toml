@@ -2,6 +2,8 @@ baseurl = "/"
 languageCode = "en-us"
 languageLang = "en"
 title = "Loren Riesenfeld"
+pygmentsStyle = "monokai"
+pygmentsUseClasses = false
 pygmentsCodeFences = true
 
 # RSS, categories and tags disabled for an easy start
