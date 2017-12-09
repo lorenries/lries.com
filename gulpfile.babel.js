@@ -11,6 +11,7 @@ import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
 import clean from "postcss-clean";
 import uncss from "postcss-uncss";
+import autoprefixer from "autoprefixer";
 
 const browserSync = BrowserSync.create();
 
@@ -29,7 +30,7 @@ gulp.task("build-preview", ["css", "js"], (cb) => buildSite(cb, hugoArgsPreview,
 // Compile CSS with PostCSS0
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
-    .pipe(postcss([cssImport({from: "./src/css/main.css"}), uncss({html: ["./site/layouts/*.html", "./site/layouts/**/*.html"]}), clean()]))
+    .pipe(postcss([cssImport({from: "./src/css/main.css"}), uncss({html: ["./site/layouts/*.html", "./site/layouts/**/*.html"]}), autoprefixer(), clean()]))
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream())
 ));

@@ -1,11 +1,13 @@
 /*
   You can use import statements to include partials:
  */
-@import "imports/tachyons.min.css";
+@import "tachyons";
 
 /*
   Custom Styles:
  */
+
+@import url('https://fonts.googleapis.com/css?family=Vollkorn');
 
 :root {
 	--main: #111;
@@ -14,11 +16,19 @@
 
  @font-face {
   font-family: "Gotham Ultra";
-  src: url("/assets/fonts/gotham-ultra.woff") format("woff");
+  src: url("/assets/fonts/gotham-ultra.woff2") format("woff2"), url("/assets/fonts/gotham-ultra.woff") format("woff");
  }
 
  .gotham {
  	font-family: 'Gotham Ultra', avenir, sans-serif;
+ }
+
+ .vollkorn {
+ 	font-family: 'Vollkorn', -apple-system, BlinkMacSystemFont, sans-serif;
+ }
+
+ .system {
+ 	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
  }
 
 .main {
@@ -41,8 +51,10 @@
 a {
 	color: var(--main);
 	text-decoration: underline;
+	opacity: 1;
 }
 
-.uncss-test {
-	background-color: yellow;
+a:hover, a:focus {
+	opacity: .5;
+	transition: opacity .15s ease-in;
 }
