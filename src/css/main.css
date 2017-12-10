@@ -44,10 +44,6 @@
   white-space: nowrap;
 }
 
-.ant {
-	/*color: #357EDD*/
-}
-
 a {
 	color: var(--main);
 	text-decoration: underline;
