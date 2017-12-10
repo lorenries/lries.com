@@ -61,3 +61,7 @@ a:hover, a:focus {
 	overflow: scroll;
 	border-radius: 3px;
 }
+
+.highlight pre {
+  margin: 0;
+}
