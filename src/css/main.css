@@ -1,35 +1,33 @@
 /*
-  You can use import statements to include partials:
- */
-@import "tachyons";
+You can use import statements to include partials:
+*/
+@import "imports/tachyons.css";
 
 /*
-  Custom Styles:
- */
-
-@import url('https://fonts.googleapis.com/css?family=Vollkorn');
+Custom Styles:
+*/
 
 :root {
 	--main: #111;
 	--bg: #f1f1f1;
- }
+}
 
- @font-face {
-  font-family: "Gotham Ultra";
-  src: url("/assets/fonts/gotham-ultra.woff2") format("woff2"), url("/assets/fonts/gotham-ultra.woff") format("woff");
- }
+@font-face {
+	font-family: "Gotham Ultra";
+	src: url("/assets/fonts/gotham-ultra.woff2") format("woff2"), url("/assets/fonts/gotham-ultra.woff") format("woff");
+}
 
- .gotham {
- 	font-family: 'Gotham Ultra', avenir, sans-serif;
- }
+.gotham {
+	font-family: 'Gotham Ultra', avenir, sans-serif;
+}
 
- .vollkorn {
- 	font-family: 'Vollkorn', -apple-system, BlinkMacSystemFont, sans-serif;
- }
+.vollkorn {
+	font-family: 'Vollkorn', "Athelas", -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
- .system {
- 	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
- }
+.system {
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
 .main {
 	color: var(--main);
@@ -40,8 +38,8 @@
 }
 
 .fit {
-  display: inline-block;
-  white-space: nowrap;
+	display: inline-block;
+	white-space: nowrap;
 }
 
 a {
@@ -55,6 +53,11 @@ a:hover, a:focus {
 	transition: opacity .15s ease-in;
 }
 
+/* uncss:ignore */
+figure {
+	margin: .5rem 0;
+}
+
 /*uncss:ignore*/
 .highlight {
 	padding: 1rem;
@@ -63,5 +66,5 @@ a:hover, a:focus {
 }
 
 .highlight pre {
-  margin: 0;
+	margin: 0;
 }
