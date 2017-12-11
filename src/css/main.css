@@ -60,11 +60,22 @@ figure {
 
 /*uncss:ignore*/
 .highlight {
-	padding: 1rem;
-	overflow: scroll;
-	border-radius: 3px;
+ padding:1rem;
+ overflow:scroll;
+ border-radius:3px;
+ border: 1px solid #00449e;
 }
 
+/*uncss:ignore*/
 .highlight pre {
 	margin: 0;
+}
+
+/*uncss:ignore*/
+code {
+  padding: .125rem .25rem;
+  background-color: #002B36;
+  border-radius: 3px;
+  border: 1px solid #00449e; 
+  color: #93A1A1;
 }
