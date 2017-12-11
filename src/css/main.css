@@ -63,7 +63,7 @@ figure {
  padding:1rem;
  overflow:scroll;
  border-radius:3px;
- border: 1px solid #00449e;
+ border: 1px solid var(--main);
 }
 
 /*uncss:ignore*/
@@ -76,6 +76,6 @@ code {
   padding: .125rem .25rem;
   background-color: #002B36;
   border-radius: 3px;
-  border: 1px solid #00449e; 
+  border: 1px solid var(--main); 
   color: #93A1A1;
 }

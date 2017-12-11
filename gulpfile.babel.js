@@ -12,6 +12,9 @@ import webpackConfig from "./webpack.conf";
 import clean from "postcss-clean";
 import uncss from "postcss-uncss";
 import autoprefixer from "autoprefixer";
+import imagemin from "gulp-imagemin";
+import mozjpeg from "imagemin-mozjpeg";
+import responsive from "gulp-responsive";
 
 const browserSync = BrowserSync.create();
 
@@ -24,7 +27,7 @@ gulp.task("hugo", (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, hugoArgsPreview));
 
 // Build/production tasks
-gulp.task("build", ["css", "js"], (cb) => buildSite(cb, [], "production"));
+gulp.task("build", ["css", "js", "img:build"], (cb) => buildSite(cb, [], "production"));
 gulp.task("build-preview", ["css", "js"], (cb) => buildSite(cb, hugoArgsPreview, "production"));
 
 // Compile CSS with PostCSS0
@@ -50,8 +53,43 @@ gulp.task("js", (cb) => {
   });
 });
 
+gulp.task("img", () =>
+  gulp.src("./site/static/images/**.*")
+    // Resize images (use with <img> shortcode in hugo)
+    .pipe(responsive({
+      "*": [{
+        width: 480,
+        rename: {suffix: "-sm"},
+      }, {
+        width: 480 * 2,
+        rename: {suffix: "-sm@2x"},
+      }, {
+        width: 675,
+      }, {
+        width: 675 * 2,
+        rename: {suffix: "@2x"},
+      }],
+    }, {
+      silent: true,              // Don't spam the console
+      withoutEnlargement: false, // Allow image enlargement
+    }))
+    .pipe(gulp.dest("./dist/images")
+));
+
+gulp.task("img:build", ["img"], () =>
+  gulp.src(["./dist/images/*.{jpg,png,gif,svg}"])
+    // Optimise images
+    .pipe(imagemin([
+      imagemin.gifsicle(),
+      imagemin.optipng(),
+      imagemin.svgo(),
+      mozjpeg(),
+    ]))
+    .pipe(gulp.dest("./dist/images"))
+);
+
 // Development server with browsersync
-gulp.task("server", ["hugo", "css", "js"], () => {
+gulp.task("server", ["hugo", "css", "js", "img"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"

@@ -14,11 +14,11 @@ Over the last year and a half, I'd say we've come pretty far. I had major roles 
 
 The website took us a little under a year, from RFP to launch. I managed the project on WOLA's end, along with my colleague Geoff Ramsey, and we worked with an Australian web development company called Agency. The project was broken into three phases: strategy, design, and development. The old website used a long outdated version of Drupal, and we successfully migrated thousands of pieces of content to Wordpress. Here's what the new website looks like:
 
-{{< figure src="./images/new-website.jpg" alt="A screenshot of WOLA's newly designed website homepage" >}}
+{{< img src="/images/new-website" type="jpg" alt="A screenshot of WOLA's newly designed website homepage" >}}
 
 And here's what it used to look like:
 
-{{< figure src="./images/old-website.png" alt="A screenshot of WOLA's old and ugly website homepage" >}}
+{{< img src="/images/old-website" type="png" alt="A screenshot of WOLA's old and ugly website homepage" >}}
 
 I also ran the process of creating all of WOLA's new brand collateral, with our comms director Kristel Mucino setting the editorial tone. This meant working with our excellent graphic designer to create logos, brand guidelines, social media banners, stationary, business cards, a publication template, and smaller redesigns of three WOLA blogs (and I'm sure there's more that I'm forgetting).
 
