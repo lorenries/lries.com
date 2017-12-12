@@ -53,12 +53,11 @@ a:hover, a:focus {
 	transition: opacity .15s ease-in;
 }
 
-/* uncss:ignore */
+/* uncss:ignore start */
 figure {
 	margin: .5rem 0;
 }
 
-/*uncss:ignore*/
 .highlight {
  padding:1rem;
  overflow:scroll;
@@ -66,16 +65,26 @@ figure {
  border: 1px solid var(--main);
 }
 
-/*uncss:ignore*/
 .highlight pre {
 	margin: 0;
 }
 
-/*uncss:ignore*/
 code {
   padding: .125rem .25rem;
   background-color: #002B36;
   border-radius: 3px;
   border: 1px solid var(--main); 
   color: #93A1A1;
+  font-family: Consolas, monaco, monospace;
 }
+
+iframe {
+	border: none; 
+}
+
+.twitter-tweet {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* uncss:ignore end */

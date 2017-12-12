@@ -1,5 +1,5 @@
 ---
-title: "Using Open Source News Applications for Non-Profits and Advocacy"
+title: "How Non-Profits Can Use Open Source News Applications for Fun and/or Advocacy"
 date: 2017-12-10T19:57:40-05:00
 draft: false
 ---

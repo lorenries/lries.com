@@ -1,11 +1,13 @@
 {{ define "main" }}
-<main class="center measure-wide f4 ph3 pv4 lh-copy">
+<main class="measure-wide center f4 ph3 pv4 lh-copy">
 
 	<header>
-
-		<div class="system f6"><span class="db">{{ .CurrentSection.Title  }}</span><time class="db" datetime="{{ .Date }}">{{ .Date.Format "January 1, 2006" }}</time>{{if eq .Params.wip true}}<span>Work in Progress{{end}}</div>
 		
-		<h1 class="f3 f2-m f1-l gotham lh-title ph2 measure-wide tc">{{.Title}}</h1>
+		<span class="db system f6">{{ .CurrentSection.Title  }}</span>
+		
+		<time class="db system f6" datetime="{{ .Date }}">{{ .Date.Format "January 1, 2006" }}</time>
+		
+		<h1 class="f3 {{ if (gt (.Title | countwords) 10)}}f2-ns {{else}}f2-m f1-l {{end}}gotham lh-title ph2 measure-wide tc">{{.Title}}</h1>
 
 	</header>
 
