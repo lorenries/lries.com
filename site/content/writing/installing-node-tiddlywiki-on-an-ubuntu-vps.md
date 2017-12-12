@@ -1,5 +1,5 @@
 ---
-title: "Installing a Node-based TiddlyWiki on an Ubuntu VPS"
+title: "Installing TiddlyWiki with Node.js on an Ubuntu VPS"
 date: 2017-12-12T13:54:21-05:00
 draft: false
 ---
@@ -13,7 +13,7 @@ Here's how to install your own TW5 instance on a VPS of your choosing:
 
 ## Prerequisites
 
-A VPS running the following:
+A VPS with the following:
 
 * Ubuntu 16.04
 * Apache 2.4.18
@@ -120,7 +120,7 @@ sudo a2ensite YOURSITE && sudo service apache2 reload
 
 ### Let's Encrypt
 
-Make sure Let’s Encrypt is configured to work with your domain/subdomain so that all of the HTTP basic authentication goes through an SSL connection:
+It's time to make sure Let’s Encrypt is configured to work with your domain/subdomain so that the HTTP basic authentication is sent over an SSL connection. Follow the instructions from the EFF's Certbot to install Let's Encrypt: https://certbot.eff.org/#ubuntuxenial-apache. You'll also probably want to set a cron job on your server to automatically renew the SSL certificates you get from Let's Encrypt (they expire after 90 days).
 
 ```bash
 sudo letsencrypt -d DOMAIN1 -d DOMAIN2
@@ -131,7 +131,7 @@ sudo letsencrypt -d DOMAIN1 -d DOMAIN2
 Here’s the basic command to run the node server. If you exit the SSH connection, reboot the server, or kill the command, the app will stop running.
 
 ```bash
-tiddlywiki YOURWIKI --server 8080 $:/core/save/all text/plain text/html USERNAME PASSWORD
+tiddlywiki /PATH/TO/YOUR/WIKI --server 8080 $:/core/save/all text/plain text/html USERNAME PASSWORD
 ```
 
 ### Forever (or a process manager of your choosing)
