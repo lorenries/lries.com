@@ -63,6 +63,7 @@ figure {
  overflow:scroll;
  border-radius:3px;
  border: 1px solid var(--main);
+ color: #93A1A1;
 }
 
 .highlight pre {

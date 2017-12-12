@@ -139,9 +139,7 @@ Instead, we can set up the command with [forever](https://github.com/foreverjs/f
 
 ```bash
 npm install -g forever
-```
 
-```bash
 forever start --spinSleepTime 10000 /usr/bin/tiddlywiki /PATH/TO/YOUR/WIKI --server 8080 $:/core/save/all text/plain text/html USERNAME PASSWORD
 ```
 
