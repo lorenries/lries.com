@@ -3,11 +3,11 @@ title: "Installing a Node-based Tiddlywiki on an Ubuntu VPS"
 date: 2017-12-12T13:54:21-05:00
 draft: false
 ---
-Tiddlywiki is a wiki-like non-linear notebook for storing information. We use it at the place where I work as a wiki for all of our institutional knowledge about complex processes and procedures (our documentation is quite extensive and is part of the reason why the Washington Post has named us one of DC's best-run nonprofits).
+Tiddlywiki is a non-linear notebook for storing information. We use it at the place where I work as a wiki for all of our institutional knowledge about complex processes and procedures (our documentation is quite extensive and is part of the reason why the Washington Post has named us one of DC's best-run nonprofits).
 
 When I first started, the wiki was saved as a single html file on a shared fileserver in our copy room. It was only accessible on our local network and used an outdated version of Tiddlywiki—finding and editing the file was a major headache (you could only save edits in Internet Explorer, for example 😱) so staff had almost completely stopped using it. 
 
-I upgraded us to TW5 and moved the wiki to a VPS on AWS, documenting my steps along the way. The result is that we now have a password-protected wiki on a subdomain on our website, that any of our staff can access from anywhere. Usage has gone way up—and the process of on-boarding new staff members is much easier than it was before.
+I upgraded us to TW5 and moved the wiki to a VPS, documenting my steps along the way. The result is that we now have a password-protected wiki on a subdomain on our website, that any of our staff can access from anywhere. Usage has gone way up—and the process of on-boarding new staff members is much easier than it was before.
 
 Here's how to install your own TW5 instance on a VPS of your choosing:
 
@@ -21,7 +21,7 @@ A VPS running the following:
 
 ## Make sure updated versions of node and npm are installed
 
-On our server, node and npm are both installed in /usr/bin/ and NOT /usr/local/bin. This might be different for you, but you can check where they're located by running `which npm` and `which node`. This will be important later when you specify the root path of the Tiddlywiki server executable.
+On our server, node and npm are both installed in /usr/bin/ and NOT /usr/local/bin. This might be different for you, but you can check where they're located by running `which npm` and `which node`. This will be important later when you specify the root path of the Tiddlywiki server command.
 
 Update npm:
 
@@ -35,13 +35,13 @@ sudo npm i -g npm
 sudo npm i -g tiddlywiki
 ```
 
-Create a new node tiddlywiki folder in the home directory with server configuration files:
+Create a new node tiddlywiki folder with server configuration files. I did this in the home directory: /home/ubuntu/wolapedia/.
 
 ```bash
-tiddlywiki PATHTOYOURWIKI --init server
+tiddlywiki /PATH/TO/YOUR/WIKI --init server
 ```
 
-## Configure apache:
+## Configure Apache:
 
 Add directory options in /etc/apache2/apache2.conf:
 
@@ -53,7 +53,7 @@ Add directory options in /etc/apache2/apache2.conf:
 </Directory>
 ```
 
-Enable mod_proxy so that apache can route traffic on your domain or subdomain to port 8080: https://www.digitalocean.com/community/tutorials/how-to-use-apache-as-a-reverse-proxy-with-mod_proxy-on-ubuntu-16-04
+Enable mod_proxy so that Apache can route traffic on your domain or subdomain to port 8080: https://www.digitalocean.com/community/tutorials/how-to-use-apache-as-a-reverse-proxy-with-mod_proxy-on-ubuntu-16-04
 
 
 ```bash
@@ -61,7 +61,7 @@ sudo a2enmod proxy && sudo a2enmod proxy_http && sudo service apache2 reload
 ```
 
 
-!!! Add a configuration file in /etc/apache2/sites-available/wolapedia.conf with the following contents:
+Add a configuration file in /etc/apache2/sites-available/YOURSITE.conf with the following contents:
 
 ```apache
 <VirtualHost *:80>
@@ -109,7 +109,7 @@ sudo a2enmod proxy && sudo a2enmod proxy_http && sudo service apache2 reload
 # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
 ```
 
-Now enable it and restart apache:
+Now enable it and restart Apache:
 
 ```bash
 sudo a2ensite YOURSITE && sudo service apache2 reload
@@ -152,10 +152,10 @@ crontab -e
 The command to restart forever on server reboot (in cron) is:
 
 ```bash
-@reboot /usr/bin/forever start --spinSleepTime 10000 /PATH/TO/YOUR/WIKI /home/ubuntu/wolapedia/ --server 8080 $:/core/save/all text/plain text/html USERNAME PASSWORD
+@reboot /usr/bin/forever start --spinSleepTime 10000 /PATH/TO/YOUR/WIKI /PATH/TO/YOUR/WIKI --server 8080 $:/core/save/all text/plain text/html USERNAME PASSWORD
 ```
 
-The Username and Password fields are what you use to set the HTTP Basic Auth.
+The Username and Password fields at the end of the forever command are what you use to set the HTTP Basic Auth. Skip this if you want to allow public access to your wiki.
 
 ## Cleaning up
 
