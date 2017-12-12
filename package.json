@@ -45,7 +45,6 @@
     "postcss-cssnext": "^2.7.0",
     "postcss-import": "^10.0.0",
     "postcss-uncss": "^0.16.1",
-    "tachyons": "^4.9.0",
     "uglifyjs-webpack-plugin": "^1.1.2",
     "uncss": "^0.16.1",
     "url-loader": "^0.5.7",
