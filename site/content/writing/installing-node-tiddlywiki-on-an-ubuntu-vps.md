@@ -1,5 +1,5 @@
 ---
-title: "Installing a Node-based Tiddlywiki on an Ubuntu VPS"
+title: "Installing a Node-based TiddlyWiki on an Ubuntu VPS"
 date: 2017-12-12T13:54:21-05:00
 draft: false
 ---
@@ -18,6 +18,7 @@ A VPS running the following:
 * Ubuntu 16.04
 * Apache 2.4.18
 * Recent versions of Node and npm
+* A domain pointed to your server
 
 ## Make sure updated versions of node and npm are installed
 
