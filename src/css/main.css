@@ -99,4 +99,8 @@ iframe {
 	height: 100%;
 }
 
+.link:focus {
+  outline: none;
+}
+
 /* uncss:ignore end */
