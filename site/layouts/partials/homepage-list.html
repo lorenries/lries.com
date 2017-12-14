@@ -1,5 +1,15 @@
 <div class="w-100 pb3">
+
+	{{ if (lt (where .context.Data.Pages "Section" .section | len) 5) }}
 	<h2 class="f3 gotham">{{ .name }}</h2>
+	{{ end }}
+
+	{{ if (gt (where .context.Data.Pages "Section" .section | len) 5) }}
+	<div class="flex justify-between items-center">
+		<h2 class="f3 gotham">{{ .name }}</h2>
+		<a class="system f6" href="/{{ .section }}">All&rarr;</a>
+	</div>
+	{{ end }}
 	
 	<ul class="list ma0 pa0">
 		{{ range first 5 (where .context.Data.Pages "Section" .section) }}
