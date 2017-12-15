@@ -1,11 +1,11 @@
 {{ define "main" }}
+<main class="mw7 center f4 ph3 pv4 lh-copy" role="main">
 <h1 class="f1 gotham lh-title ph2 measure-wide tc">{{.Title}}</h1>
-<div class="center mw7 f4 ph2 lh-copy">
 	{{ .Content }}
 	<ul class="list ma0 pa0">
 		{{ range .Data.Pages }}
 		    <li class="ma0 pb1 mb3 f4 no-underline bb"><a href="{{.URL}}" class="no-underline dim">{{.Title}}</a></li>
 		{{ end }}
 	</ul>
-</div>
+</main>
 {{ end }}

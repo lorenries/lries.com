@@ -1,6 +1,6 @@
 ---
 title: "Venezuelan Politics and Human Rights Blog"
-date: 2017-12-13T14:05:36-05:00
+date: 2017-12-11T14:05:36-05:00
 draft: false
 description: ""
 roles: ["Design", "Wordpress Development"]
