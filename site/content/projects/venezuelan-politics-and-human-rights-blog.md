@@ -8,18 +8,12 @@ link: "https://venezuelablog.org/"
 wip: false
 ---
 
-This past year has been a critical time for Venezuela. In July, President Maduro created a new Constituent Assembly, with powers to rewrite the Venezuelan Constitution, a dramatic escalation in a tense political situation that threatened to disempower citizens for years to come.
+For the last five years WOLA has maintained one of the most [popular political blogs on Venezuela](https://venezuelablog.org/), which has long sought to provide reality-based, independent analysis of the situation there.
 
-Over the last five years, WOLA's Venezuela program has sought to provide reality-based, independent analysis of the situation there through a Tumblr blog with regular updates on Venezuelan politics and human rights.
+This past year has been a critical time for Venezuela, and we wanted to try to take the blog to the next level. The blog started out on Tumblr, which made sense in 2012, but the internet has changed and I don't think many people take Tumblr blogs seriously anymore.
 
-I've always thought that hosting our blog on Tumblr cheapened our message and diluted the power of our analysis. I pitched to our communications director that we migrate the blog to Wordpress on a new URL: https://venezuelablog.org.
+I did a mini-redesign and moved the blog over to a custom domain on Wordpress: https://venezuelablog.org.
 
-The project itself was a bit of a struggle. I had worked with Wordpress in the past managing content and updating plugins, but had never developed a Wordpress site and theme from scratch.
+It was an interesting project and I learned a ton about writing custom Wordpress themes. This was one of my first attempts at designing something, so I'm not super super proud of the final product, but it's definitely better than it was before.
 
-Migrating posts from Tumblr to Wordpress was challenging—the built-in importer had a lot of strange quirks and required a bunch of manual find-and-replace's on the database.
-
-Developing the theme itself was more interesting. I started with Underscores, a WP theme boilerplate, and started developing custom homepage, archive page, and author page templates.
-
-Tachyons in WP templates
-
-Design
+One of my other regrets was using an atomic CSS library (Tachyons) as opposed to writing my own SASS. Tachyons is amazing, but it really requires a component-based approach to design as well as a clean, reusable templating system (I had [more success](https://lries.com/projects/microsite-wola-women-and-incarceration/) using Tachyons with the Timber templating system for WP).

@@ -7,3 +7,5 @@ roles: ["Design", "Front-End Development"]
 link: "https://interactives.wola.org/2017/09/border-patrol/"
 wip: false
 ---
+
+This is a long-form piece I laid out digitally for WOLA to accompany our [Anti-Immigrant Legislation Tracker](https://interactives.wola.org/2017/09/beyond-the-wall-congress/). It details four common misconceptions floating around Washington about increasing the size of the Border Patrol, and used several different data visualizations, and audio clips (from none other than General Kelly) to support our arguments.
