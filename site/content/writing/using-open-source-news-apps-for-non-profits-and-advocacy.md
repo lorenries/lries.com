@@ -1,7 +1,7 @@
 ---
 title: "How Non-Profits Can Use Open Source News Applications for Fun and/or Advocacy"
 date: 2017-12-13T19:57:40-05:00
-draft: false
+draft: true
 ---
 One of my favorite things about how the news industry has evolved over the last couple of years is that in-house graphics teams have shown an incredible commitment to open-sourcing their projects and tooling. These projects run the gamut from charting applications and frameworks, to social media image generation tools, to tooling that brings the power of desktop GUI graphics editors to the web.
 
