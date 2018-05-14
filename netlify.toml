@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[context.deploy-preview]
+  command = "npm run build-preview"
+
+[context.dry]
+  command = ""
+  publish = "/"
