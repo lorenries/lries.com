@@ -1,17 +1,17 @@
 ---
-title: "How Non-Profits Can Use Open Source News Applications for Fun and/or Advocacy"
+title: "How Non-Profits Can Use Open Source News Applications to Improve  Communications Capacity"
 date: 2017-12-13T19:57:40-05:00
-draft: true
+draft: false
 ---
 One of my favorite things about how the news industry has evolved over the last couple of years is that in-house graphics teams have shown an incredible commitment to open-sourcing their projects and tooling. These projects run the gamut from charting applications and frameworks, to social media image generation tools, to tooling that brings the power of desktop GUI graphics editors to the web.
 
 I think these open-source projects have the untapped potential to really change how communications teams at non-profits and advocacy organizations do their digital work.
 
-Here are some thoughts on the current landscape of open-source news applications, and how non-profits can integrate these tools into their workflows and leverage them to improve their digital communications.
+Here are some thoughts (or maybe it's more of a map) on the current landscape of open-source news applications, and how non-profits can integrate these tools into their workflows and leverage them to improve their digital communications.
 
 ## Charting
 
-Most of the web-based GUI charting tools out there are wrappers for reusable D3 templates. I think GUI's are powerful and necessary in the charting space. They allow non-technical editors, reporters, or NGO program staff to create accessible, interactive, web-native charts without much guidance from a programmer or graphics editor. The most powerful tools in this space are ones that combine a GUI with the optional ability to edit chart code directly. For more on this, see Gregor Aisch's post: [Seven Features You'll Want In Your Next Charting Tool](https://www.vis4.net/blog/2015/03/seven-features-youll-wantin-your-next-charting-tool/#expert-custom-javascript-mode).
+Most of the web-based GUI charting tools out there are wrappers for reusable D3.js templates. I think GUIs are powerful and necessary in the charting space. They allow non-technical editors, reporters, or NGO program staff to create accessible, interactive, web-native charts without much guidance from a programmer or graphics editor. The most powerful tools in this space are ones that combine a GUI with the optional ability to edit chart code directly. For more on this, see Gregor Aisch's post: [Seven Features You'll Want In Your Next Charting Tool](https://www.vis4.net/blog/2015/03/seven-features-youll-wantin-your-next-charting-tool/#expert-custom-javascript-mode).
 
 ### Datawrapper
 
@@ -32,6 +32,10 @@ A couple of things you'll probably want to do that Greg doesn't cover:
 *Datawrapper map*
 
 ### Chartbuilder
+
+Another classic is Quartz's Chartbuilder. It runs completely on the front end, so you can host it statically with something like S3 or another comparable service, and you don't need a database or backend chops to host charts.
+
+The downside of this approach is that all of your exports will be static (either images )
 
 ### Chartwerk
 
