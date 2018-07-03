@@ -5,3 +5,5 @@ site/.DS_Store
 src/.DS_Store
 src/css/.DS_Store
 site/static/.DS_Store
+design/
+public/
