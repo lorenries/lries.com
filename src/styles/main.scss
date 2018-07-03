@@ -113,17 +113,28 @@ body {
   display: block;
 }
 
-.project-section__title {
+.project-section__header {
   display: flex;
-  justify-content: start;
-  align-items: center;
-  grid-column: 1 / -1;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  @include not-small {
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    grid-column: 1 / -1;
+  }
+}
+
+.project-section__title {
   font-size: $f3;
 }
 
 .project-section__read-more {
-  @include ph($s3);
-  font-size: $f5;
+  font-size: $f6;
+  @include not-small {
+    @include ph($s3);
+  }
 }
 
 .project-section__title--standalone {

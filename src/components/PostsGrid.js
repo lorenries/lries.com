@@ -5,16 +5,14 @@ import Link from '../components/Link'
 const PostsGrid = ({ posts, section, type, standalone }) => (
   <section className="project-section" key={type}>
     {standalone ? (
-      <h2 className="project-section__title--standalone">
-        {section}
-      </h2>
+      <h2 className="project-section__title--standalone">{section}</h2>
     ) : (
-      <div className="project-section__title">
-        <h3>{section}</h3>
+      <div className="project-section__header">
+        <h3 className="project-section__title">{section}</h3>
         <Link to={'/' + type}>
           <span className="project-section__read-more">All&rarr;</span>
         </Link>
-        </div>
+      </div>
     )}
     {posts.map(({ node }) => (
       <div
