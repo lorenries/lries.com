@@ -1,0 +1,33 @@
+backend:
+  name: git-gateway
+
+media_folder: src/img
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "src/pages/posts"
+    create: true
+    fields:
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: description, label: Description, widget: text, required: false}
+      - { name: thumbnail, label: Thumbnail, widget: string, required: false }
+      - { name: roles, label: Tech, widget: list, required: false }
+      - { name: link, label: Link, widget: string, required: false }
+      - { name: redirect, label: Redirect?, widget: boolean, default: false }
+      - { name: body, label: Body, widget: markdown, required: false }
+      - { name: template, label: Template, widget: string, default: 'post' }
+  - name: "work"
+    label: "Work"
+    folder: "src/pages/work"
+    create: true
+    fields:
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: description, label: Description, widget: text, required: false}
+      - { name: thumbnail, label: Thumbnail, widget: string, required: false }
+      - { name: roles, label: Roles, widget: list, required: false }
+      - { name: link, label: Link, widget: string, required: false }
+      - { name: redirect, label: Redirect?, widget: boolean, default: false }
+      - { name: body, label: Body, widget: markdown, required: false }
+      - { name: template, label: Template, widget: string, default: 'work' }

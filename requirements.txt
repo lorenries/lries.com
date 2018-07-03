@@ -1,2 +1,0 @@
-pygments==2.2.0
-pygments-solarized==0.0.3

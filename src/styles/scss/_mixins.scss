@@ -1,0 +1,61 @@
+@mixin dim($opacity) {
+  opacity: 1;
+  transition: opacity 0.15s ease-in;
+  &:hover,
+  &:focus {
+    opacity: $opacity;
+    transition: opacity 0.15s ease-in;
+  }
+  &:active {
+    opacity: 0.8;
+    transition: opacity 0.15s ease-out;
+  }
+}
+
+@mixin center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin button($pv, $ph, $fs) {
+  @include pv($pv);
+  @include ph($ph);
+  font-size: $fs;
+  text-align: center;
+  color: $white;
+  background-color: $blue;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  @include dim(0.5);
+}
+
+// Horizontal and Vertical Padding
+@mixin ph($var) {
+  padding-left: $var;
+  padding-right: $var;
+}
+
+@mixin pv($var) {
+  padding-top: $var;
+  padding-bottom: $var;
+}
+
+// Mobile first media queries
+@mixin not-small {
+  @media screen and (min-width: 30em) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: 30em) and (max-width: 60em) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: 60em) {
+    @content;
+  }
+}

@@ -1,0 +1,20 @@
+---
+title: "Venezuelan Politics and Human Rights Blog"
+date: 2017-09-01T14:05:36-05:00
+published: true
+description: "A new Wordpress site for WOLA's Venezuela Blog"
+template: "work"
+roles: ["Design", "Wordpress Development"]
+link: "https://venezuelablog.org/"
+redirect: false
+---
+
+For the last five years WOLA has maintained one of the most [popular political blogs on Venezuela](https://venezuelablog.org/), which has long sought to provide reality-based, independent analysis of the situation there.
+
+This past year has been a critical time for Venezuela, and we wanted to try to take the blog to the next level. The blog started out on Tumblr, which made sense in 2012, but the internet has changed and I don't think many people take Tumblr blogs seriously anymore.
+
+I did a mini-redesign and moved the blog over to a custom domain on Wordpress: https://venezuelablog.org.
+
+It was an interesting project and I learned a ton about writing custom Wordpress themes. This was one of my first attempts at designing something, so I'm not super super proud of the final product, but it's definitely better than it was before.
+
+One of my other regrets was using an atomic CSS library (Tachyons) as opposed to writing my own SASS. Tachyons is amazing, but it really requires a component-based approach to design as well as a clean, reusable templating system (I had [more success](https://lries.com/projects/microsite-wola-women-and-incarceration/) using Tachyons with the Timber templating system for WP).
