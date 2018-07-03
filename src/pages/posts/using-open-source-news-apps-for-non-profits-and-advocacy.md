@@ -1,8 +1,9 @@
 ---
 title: "How Non-Profits Can Use Open Source News Applications to Improve  Communications Capacity"
 date: 2017-12-13T19:57:40-05:00
-published: false
+published: true
 template: "post"
+thumbnail: "../../img/open-source-non-profits.png"
 ---
 
 One of my favorite things about how the news industry has evolved over the last couple of years is that in-house graphics teams have shown an incredible commitment to open-sourcing their projects and tooling. These projects run the gamut from charting applications and frameworks, to social media image generation tools, to tooling that brings the power of desktop GUI graphics editors to the web.
@@ -35,9 +36,9 @@ _Datawrapper map_
 
 ### Chartbuilder
 
-Another classic is Quartz's Chartbuilder. It runs completely on the front end, so you can host it statically with something like S3 or another comparable service, and you don't need a database or backend chops to host charts.
+Another good one is Quartz's Chartbuilder. It runs completely on the front end, so you can host it statically with something like S3 or another comparable service, and you don't need a database or backend chops to host charts.
 
-The downside of this approach is that all of your exports will be static (either images )
+The downside of this approach is that all of your exports will be static (either images or SVGs) and they won't be accessible to screen readers or search bots.
 
 ### Chartwerk
 
@@ -51,11 +52,11 @@ pym.js
 
 Cardkit is an open source browser-based image creation tool I customized and installed for WOLA back in August. Cardkit makes it really easy for non-technical users to create text cards for social media, as well as caption and watermark images. It was originally created by the Sunday Times, and is written in Angular. Since we started using Cardkit, our social media engagement has skyrocketed, and image cards are some of our most retweeted content.
 
-{{< tweet 824358393062297600 >}}
+<tweet tweetid=“824358393062297600”></tweet>
 
 Cardkit was relatively easy to install, but customizing it with WOLA's branding was a bit of a challenge. In Cardkit, the user interacts with an SVG canvas in the interface, which is converted to a PNG on "Download."
 
-Customizing the default theme in the canvas required working with the Anglular $scope object, with all of WOLA's font, logo, and color information. I also wrote a method from scratch that clears the canvas, resizes an attached image, and adds a video "play" icon. This is really useful when we send emails to our mailing list with video screenshots, since you can't embed actual videos in email. Throughout the process, I learned a lot about how to structure a web application in Angular.
+Customizing the default theme in the canvas required working with the Anglular $scope object, with all of WOLA's font, logo, and color information. I also wrote a method from scratch that clears the canvas, resizes an attached image, and adds a video "play" icon. This is really useful when we send emails to our mailing list with video screenshots, since you can't embed actual videos in email. Throughout the process, I learned a lot about how to structure a web application in Angular. Test
 
 ### Lunchbox
 
@@ -65,4 +66,7 @@ Customizing the default theme in the canvas required working with the Anglular $
 
 ## Storing Knowledge with a Good Wiki
 
+This is a hard one. Open source knowledge sharing tools exist, but I do feel that paid options are often better. One of the best paid services I've seen is Notion, which combines a bunch of different tools—calendar, task management, wiki, project tracking, and even lightweight spreadsheet/CRM capabilities—into one app.
+
+At WOLA, we had a very
 bustle, archie ML, ai-to-html, pym.js, mc email templates
