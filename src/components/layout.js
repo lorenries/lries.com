@@ -2,7 +2,6 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Header from '../components/Header'
 import { StaticQuery, graphql } from 'gatsby'
-import montserrat from 'typeface-montserrat'
 import '../styles/main.scss'
 
 const Layout = ({ children, location }) => {
