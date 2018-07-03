@@ -41,6 +41,16 @@
   padding-bottom: $var;
 }
 
+@mixin mh($var) {
+  margin-left: $var;
+  margin-right: $var;
+}
+
+@mixin mv($var) {
+  margin-top: $var;
+  margin-bottom: $var;
+}
+
 // Mobile first media queries
 @mixin not-small {
   @media screen and (min-width: 30em) {

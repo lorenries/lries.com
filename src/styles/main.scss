@@ -133,7 +133,7 @@ body {
 .project-section__read-more {
   font-size: $f6;
   @include not-small {
-    @include ph($s3);
+    @include ph($s2);
   }
 }
 
@@ -143,6 +143,7 @@ body {
 }
 
 .project-section__post-container {
+  line-height: $lh-copy;
   @include dim(0.8);
 }
 
@@ -162,7 +163,6 @@ body {
   font-size: $f5;
   color: lighten($black, 20%);
   padding-left: $s1;
-  line-height: $lh-copy;
 }
 
 // POSTS
