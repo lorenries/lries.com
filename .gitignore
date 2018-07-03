@@ -7,3 +7,4 @@ src/css/.DS_Store
 site/static/.DS_Store
 design/
 public/
+.cache
