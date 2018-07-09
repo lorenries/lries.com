@@ -6,7 +6,9 @@ title: >-
 thumbnail: ../../img/open-source-non-profits.png
 redirect: false
 template: custom
+published: true
 ---
+
 One of my favorite things about how the news industry has evolved over the last couple of years is that in-house graphics teams have shown an incredible commitment to open-sourcing their projects and tooling. These projects run the gamut from charting applications and frameworks, to social media image generation tools, to tooling that brings the power of desktop GUI graphics editors to the web.
 
 I think these open-source projects have the untapped potential to really change how communications teams at non-profits and advocacy organizations do their digital work.
@@ -37,7 +39,7 @@ A couple of things you'll probably want to do that Greg doesn't cover:
 
 Another good one is Quartz's [Chartbuilder](https://github.com/Quartz/Chartbuilder). It runs completely on the front end, so you can host it statically with something like S3 or another comparable service, and you don't need a database or backend chops to host charts. Here's [an example](<Here's an example of a Chartbuilder instance I>) of a Chartbuilder instance I set up with custom branding, which we very occasionally used at WOLA.
 
-The downside of this approach is that all of your exports will be static (either images or SVGs) and they won't be accessible to screen readers or search bots. 
+The downside of this approach is that all of your exports will be static (either images or SVGs) and they won't be accessible to screen readers or search bots.
 
 ### Chartwerk
 
