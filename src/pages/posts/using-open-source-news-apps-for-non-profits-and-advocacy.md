@@ -37,7 +37,7 @@ A couple of things you'll probably want to do that Greg doesn't cover:
 
 ### Chartbuilder
 
-Another good one is Quartz's [Chartbuilder](https://github.com/Quartz/Chartbuilder). It runs completely on the front end, so you can host it statically with something like S3 or another comparable service, and you don't need a database or backend chops to host charts. Here's [an example](<Here's an example of a Chartbuilder instance I>) of a Chartbuilder instance I set up with custom branding, which we very occasionally used at WOLA.
+Another good one is Quartz's [Chartbuilder](https://github.com/Quartz/Chartbuilder). It runs completely on the front end, so you can host it statically with something like S3 or another comparable service, and you don't need a database or backend chops to host charts. Here's [an example](https://interactives.wola.org/chartbuilder/) of a Chartbuilder instance I set up with custom branding, which we very occasionally used at WOLA.
 
 The downside of this approach is that all of your exports will be static (either images or SVGs) and they won't be accessible to screen readers or search bots.
 
