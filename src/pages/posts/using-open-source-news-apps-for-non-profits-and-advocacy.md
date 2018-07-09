@@ -1,8 +1,8 @@
 ---
 title: "How Non-Profits Can Use Open Source News Applications to Improve  Communications Capacity"
-date: 2017-12-13T19:57:40-05:00
+date: 2018-06-01T19:57:40-05:00
 published: true
-template: "post"
+template: "custom"
 thumbnail: "../../img/open-source-non-profits.png"
 ---
 
@@ -18,9 +18,9 @@ Most of the web-based GUI charting tools out there are wrappers for reusable D3.
 
 ### Datawrapper
 
-Datawrapper is one of the first and best web-based GUI charting applications out there. Datawrapper is a for-profit company, but the core of the tool is completely open source. For organizations that require custom branding, the hosted version is pricey ($230/month for custom branding and fonts).
+Datawrapper is one of the first and best web-based GUI charting applications out there. Datawrapper is a for-profit company, but the core of the tool is completely open source. For organizations that require custom branding, the hosted version is pricey (around $230/month for custom branding and fonts).
 
-The open-source core does a bunch of things really well, but the paid version is better—it has a bunch of really nice chart and map types that the company hasn't open-sourced. Fortunately, with a bit of customization, it's possible to get around these limitations.
+The open-source core does a bunch of things really well, but the paid version is much better—it has a bunch of really nice chart and map types that the company hasn't open-sourced. Fortunately, with a bit of customization, it's possible to get around these limitations.
 
 I set up the open-source version of Datawrapper for WOLA last year, and we've been using it ever since. Some of our best publications use Datawrapper charts to great effect.
 
@@ -29,44 +29,58 @@ Setting Datawrapper up involved a lot of trial and error. The setup instructions
 A couple of things you'll probably want to do that Greg doesn't cover:
 
 * Create a custom theme with default colors/fonts for your organization.
-* Extend the default (and now deprecated) mapping plugin by creating map templates for other regions—for us this was Latin America and Central America (see below).
+* Extend the default (and now deprecated) mapping plugin by creating map templates for other regions—for us this was Latin America and Central America.
 * If Datawrapper's built-in export options don't work (they didn't for me), try Rubens Fernando's publish-embed plugin: https://github.com/rubensfernando/publish-embed.
-
-_Datawrapper map_
 
 ### Chartbuilder
 
-Another good one is Quartz's Chartbuilder. It runs completely on the front end, so you can host it statically with something like S3 or another comparable service, and you don't need a database or backend chops to host charts.
+Another good one is Quartz's [Chartbuilder](https://github.com/Quartz/Chartbuilder). It runs completely on the front end, so you can host it statically with something like S3 or another comparable service, and you don't need a database or backend chops to host charts.
 
 The downside of this approach is that all of your exports will be static (either images or SVGs) and they won't be accessible to screen readers or search bots.
 
 ### Chartwerk
 
-### Daily Graphics Rig
+Chartwerk is a relatively new charting system from the Dallas Morning News. I haven't seen much written about it and haven't set it up yet. From what I can tell, it's a nice interface for non-coders to easily create interactive and static charts, and it also combines the ability for graphics editors or coders to edit chart code directly. The [backend](https://github.com/DallasMorningNews/django-chartwerk) is built on Django and the [frontend](https://github.com/DallasMorningNews/chartwerk-editor) is a React app.
 
-pym.js
+### Generators and rigs
+
+Another approach that completely leaves the GUI behind is to use a generator. The best (and one of the first) examples of this is NPR's [dailygraphics](https://github.com/nprapps/dailygraphics) rig. At it's core, it uses python and flask to create new graphics based on a set of templates. You get a mini CMS on Google Sheets, everything is tracked in a git repository, and larger assets like images and audio can be stored externally on S3. [Chart templates](https://github.com/nprapps/dailygraphics/tree/master/graphic_templates) are easily customizable—they’re just HTML and Javascript that can be modified, copied, extended, or what have you. It integrates with another open source project released by NPM called [pym.js](http://blog.apps.npr.org/pym.js/), a way to embed iframes responsively in content management systems. Pretty nifty.
+
+I think NPR’s rig has the potential to be powerful and efficient, but it also requires significant investment for setup and maintenance. I also don’t think it’s as easy as it could be to onboard new developers to the workflow, and it leaves non-technical staff completely in the cold.
 
 ## Social Media Graphics
 
 ### Cardkit
 
-Cardkit is an open source browser-based image creation tool I customized and installed for WOLA back in August. Cardkit makes it really easy for non-technical users to create text cards for social media, as well as caption and watermark images. It was originally created by the Sunday Times, and is written in Angular. Since we started using Cardkit, our social media engagement has skyrocketed, and image cards are some of our most retweeted content.
+[Cardkit](https://github.com/times/cardkit) is an open source browser-based image creation tool released by The Sunday Times, which I customized and installed for WOLA back in August of 2016. Cardkit makes it really easy for non-technical users to create text cards for social media, as well as caption and watermark images. It was originally created by the Sunday Times, and is written in Angular. Since we started using Cardkit, our social media engagement has skyrocketed, and image cards are some of our most retweeted content. I also added the ability to clear the canvas, resize an attached image, and add a video "play" icon. This is really useful when we send emails to our mailing list with video screenshots, since you can't embed actual videos in email.
 
 <tweet tweetid=“824358393062297600”></tweet>
 
-Cardkit was relatively easy to install, but customizing it with WOLA's branding was a bit of a challenge. In Cardkit, the user interacts with an SVG canvas in the interface, which is converted to a PNG on "Download."
-
-Customizing the default theme in the canvas required working with the Anglular $scope object, with all of WOLA's font, logo, and color information. I also wrote a method from scratch that clears the canvas, resizes an attached image, and adds a video "play" icon. This is really useful when we send emails to our mailing list with video screenshots, since you can't embed actual videos in email. Throughout the process, I learned a lot about how to structure a web application in Angular. Test
+Cardkit was relatively easy to install, but customizing it with WOLA's branding was a bit of a challenge in version 1 of the tool. Cardkit v1 used Angular, but v2 is built on React, which I like a lot more. It also comes with a nifty [Yeoman generator](https://www.github.com/times/generator-cardkit) for customizing new installations.
 
 ### Lunchbox
 
-## Calling Congress
+[Lunchbox](http://blog.apps.npr.org/lunchbox/) is a similar tool created by NPR.
 
-## Podcasts
+## Tools for Working with Congress and Congressional Data
+
+Often times non-profits want to mobilize their supporters to call their Congressional representatives in support of or in opposition to particular issues (even though there’s a lot of [debate](https://www.newyorker.com/magazine/2017/03/06/what-calling-congress-achieves) as to whether this accomplishes anything). Rather than sending people to a list of phone numbers or have them call the central switchboard, there are open-source tools available to give people a script and easily help them find their representative’s contact info.
+
+We had a lot of success using a tiny app called [Call to Action](https://github.com/lachlanjc/calltoaction) for some of [our work opposing the border wall](https://interactives.wola.org/stopthewall/).
+
+Other alternatives include [Call Congress by Ian Webster](https://github.com/typpo/call-congress), [Contact Congress](https://github.com/unitedstates/contact-congress) by the [@unitedstates](https://theunitedstates.io/) project, [Democracy.io](https://democracy.io/) by the EFF.
+
+For working with Congressional data, here’s a list of the best resources I’ve come across:
+
+* [ProPublica Congress API](https://projects.propublica.org/api-docs/congress-api/): one of the best API’s out there for getting Congressional data, including votes, members, bills, nominations, etc.
+* [ProPublica Staffers](https://github.com/propublica/staffers): an interactive and searchable House staffer directory
+* [ProPublica StateFace](https://github.com/propublica/stateface): a typeface of U.S. state shapes to use in web apps
+* [congress-legislators by @unitedstates](https://github.com/unitedstates/congress-legislators): structured data for all members of the United States Congress, 1789-present
+* [images by @unitedstates](https://github.com/unitedstates/images): public domain photos of Members of the United States Congress
+* [districts by @unitedstates](https://github.com/unitedstates/districts): GeoJSON and other shape files for the federal legislative districts of the US
 
 ## Storing Knowledge with a Good Wiki
 
-This is a hard one. Open source knowledge sharing tools exist, but I do feel that paid options are often better. One of the best paid services I've seen is Notion, which combines a bunch of different tools—calendar, task management, wiki, project tracking, and even lightweight spreadsheet/CRM capabilities—into one app.
+This is a hard one. Open-source knowledge sharing tools exist, but I do feel that paid options are often better. One of the best paid services I've seen is [Notion](https://www.notion.so/), which combines a bunch of different tools—calendar, task management, wiki, project tracking, and even lightweight spreadsheet/CRM capabilities—into one app.
 
-At WOLA, we had a very
-bustle, archie ML, ai-to-html, pym.js, mc email templates
+At WOLA, we used an old and deprecated version of [Tiddlywiki](https://tiddlywiki.com/), stored on a local fileserver. I upgraded it to a newer version of Tiddlywiki and put it onto a Node.js server behind some basic authentication on a subdomain, so that people could access it outside of the office. Usage has gone way up. I wrote about that process [here](/posts/installing-node-tiddlywiki-on-an-ubuntu-vps/).
