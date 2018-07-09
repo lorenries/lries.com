@@ -139,7 +139,10 @@ body {
 
 .project-section__title--standalone {
   grid-column: 1 / -1;
-  font-size: $f2;
+  font-size: $f3;
+  @include not-small {
+    font-size: $f2;
+  }
 }
 
 .project-section__post-container {
