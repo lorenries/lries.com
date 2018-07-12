@@ -9,6 +9,7 @@ collections:
     create: true
     fields:
       - { name: date, label: Date, widget: datetime }
+      - { name: published, label: published, widget: boolean, default: true }
       - { name: title, label: Title }
       - { name: description, label: Description, widget: text, required: false}
       - { name: thumbnail, label: Thumbnail, widget: string, required: false }
@@ -23,6 +24,7 @@ collections:
     create: true
     fields:
       - { name: date, label: Date, widget: datetime }
+      - { name: published, label: published, widget: boolean, default: true }
       - { name: title, label: Title }
       - { name: description, label: Description, widget: text, required: false}
       - { name: thumbnail, label: Thumbnail, widget: string, required: false }

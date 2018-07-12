@@ -10,8 +10,10 @@ roles:
 link: >-
   https://beta.observablehq.com/@lorenries/where-did-people-start-end-capital-bikeshare-trips-in-2017
 redirect: false
+published: true
 template: post
 ---
+
 Here’s an Observable notebook I made that maps Capital Bikeshare trips in 2017 with a hexagonally binned heat map in MapboxGL. For mapping large datasets with some kind of encoded magnitude, I think you’ll almost always want a heat map, chloropleth, or even a [density contour plot](https://beta.observablehq.com/@pstuffa/making-maps-with-nyc-open-data). Bubble maps, while nifty, are not great for datasets where points might overlap. Here’s a [good discussion](http://mechanicalscribe.com/notes/binify-d3-topojson-tutorial/) on the topic, with a bit of explanation as to why hexbin maps present a nice alternative.
 
 \[[full]]
@@ -133,8 +135,8 @@ Here’s the data structure I used for each Capital Bikeshare location:
 
 The reason I used this format is two-fold:
 
-1. When processing the big data file, I want to increment a “rides” counter on the starting station and the ending station, into some kind of “hour” bucket for whenever that person started/ended their ride. This will be helpful at the visualization stage, so that the user can switch between different hours.
-2. Instead of an array of objects, it’s better to use one big object with unique keys that we can lookup as we process each line of the main csv. See this [Stack Overview discussion](https://stackoverflow.com/a/17295727) on the fastest array/object lookup methods.
+1.  When processing the big data file, I want to increment a “rides” counter on the starting station and the ending station, into some kind of “hour” bucket for whenever that person started/ended their ride. This will be helpful at the visualization stage, so that the user can switch between different hours.
+2.  Instead of an array of objects, it’s better to use one big object with unique keys that we can lookup as we process each line of the main csv. See this [Stack Overview discussion](https://stackoverflow.com/a/17295727) on the fastest array/object lookup methods.
 
 Now that bikeshare station locations have been processed into a good-enough format, it’s time to get to work on the mutli-million line csv containing all of our ride data.
 
