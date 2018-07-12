@@ -1,18 +1,20 @@
 ---
-title: "Hexbin Maps with Capital Bikeshare Data"
-description: "Where did people start & end Capital Bikeshare trips in 2017?"
-date: 2018-07-11
-published: true
-template: "post"
-roles: ["MapboxGL", "Turf.js"]
-thumbnail: "../../img/hexbin.png"
-link: "https://beta.observablehq.com/@lorenries/where-did-people-start-end-capital-bikeshare-trips-in-2017"
+date: 2018-07-11T00:00:00.000Z
+title: Hexbin Maps with Capital Bikeshare Data and MapboxGL
+description: Where did people start and end Capital Bikeshare trips in 2017?
+thumbnail: ../../img/hexbin.png
+roles:
+  - MapboxGL
+  - Turf.js
+  - Node.js
+link: >-
+  https://beta.observablehq.com/@lorenries/where-did-people-start-end-capital-bikeshare-trips-in-2017
 redirect: false
+template: post
 ---
+Here’s an Observable notebook I made that maps Capital Bikeshare trips in 2017 with a hexagonally binned heat map in MapboxGL. For mapping large datasets with some kind of encoded magnitude, I think you’ll almost always want a heat map, chloropleth, or even a [density contour plot](https://beta.observablehq.com/@pstuffa/making-maps-with-nyc-open-data). Bubble maps, while nifty, are not great for datasets where points might overlap. Here’s a [good discussion](http://mechanicalscribe.com/notes/binify-d3-topojson-tutorial/) on the topic, with a bit of explanation as to why hexbin maps present a nice alternative.
 
-Here’s an Observable notebook I made that maps Capital Bikeshare trips with a hexagonally binned heat map in MapboxGL. For mapping large datasets with some kind of encoded magnitude, I think you’ll almost always want a heat map, chloropleth, or even a [density contour plot](https://beta.observablehq.com/@pstuffa/making-maps-with-nyc-open-data). Bubble maps, while nifty, are not great for datasets where points may overlap. Here’s a [good discussion](http://mechanicalscribe.com/notes/binify-d3-topojson-tutorial/) on the topic, with a bit of explanation as to why hexbin maps present a nice alternative.
-
-[[full]]
+\[[full]]
 | <a href="https://beta.observablehq.com/@lorenries/where-did-people-start-end-capital-bikeshare-trips-in-2017" target="_blank"><img src="../../img/hexbin.png"></img></a>
 
 All of the visualization code is in [this Observable notebook](https://beta.observablehq.com/@lorenries/where-did-people-start-end-capital-bikeshare-trips-in-2017), along with some notes on the front-end process. The rest of this post is basically a cleaned up version of my notes from the data cleaning and processing stage.
@@ -35,7 +37,7 @@ awk 'NR == 1 || FNR > 1' *.csv > output.csv
 
 * [Stack Exchange: Simple efficient concatenation of CSV files](https://unix.stackexchange.com/questions/234128/simple-efficient-concatenation-of-csv-files)
 
-The awk command got rid of the header line in all of the csv files. I added that back in with sed :
+The `awk` command got rid of the header line in all of the csv files. I added that back in with sed :
 
 ```bash
 sed -i '' $'1i\\\nduration,start,end,start_id,start_address,end_id,end_address,bike_number,member_type\n' file.csv
@@ -74,7 +76,7 @@ Now that we have a relatively clean csv file from our command line data manipula
 
 The basic process I went through is this:
 
-Get a list of all Capital Bikeshare stations and convert it to json with visidata:
+Get a list of all Capital Bikeshare stations [here](http://opendata.dc.gov/datasets/capital-bike-share-locations), download as csv, and convert it to json with visidata:
 
 * `vd locations.csv`
 * `Option + s locations.json`
@@ -101,7 +103,7 @@ The bikeshare stations in the locations.json file now look like this:
 ]
 ```
 
-I want the user to be able to switch between different hours on the final map, so I processed the locations into kind of a weird data format. There’s probably a better way of doing it, but 🤷‍♂️.
+I want the user to be able to switch between different hours on the final map, so I processed the locations into kind of a weird data format. There’s probably a better way of doing it, but whatever, it works.
 
 Here’s the data structure I used for each Capital Bikeshare location:
 
@@ -131,8 +133,8 @@ Here’s the data structure I used for each Capital Bikeshare location:
 
 The reason I used this format is two-fold:
 
-1.  When processing the big data file, I want to increment a “rides” counter on the starting station and the ending station, into some kind of “hour” bucket for whenever that person started/ended their ride. This will be helpful at the visualization stage, so that the user can switch between different hours.
-2.  Instead of an array of objects, it’s better to use one big object with unique keys that we can lookup as we process each line of the main csv. See this [Stack Overview discussion](https://stackoverflow.com/a/17295727) on the fastest array/object lookup methods.
+1. When processing the big data file, I want to increment a “rides” counter on the starting station and the ending station, into some kind of “hour” bucket for whenever that person started/ended their ride. This will be helpful at the visualization stage, so that the user can switch between different hours.
+2. Instead of an array of objects, it’s better to use one big object with unique keys that we can lookup as we process each line of the main csv. See this [Stack Overview discussion](https://stackoverflow.com/a/17295727) on the fastest array/object lookup methods.
 
 Now that bikeshare station locations have been processed into a good-enough format, it’s time to get to work on the mutli-million line csv containing all of our ride data.
 
@@ -213,6 +215,10 @@ Visidata:
 csvkit:
 
 * [csvkit 1.0.3 — csvkit 1.0.3 documentation](https://csvkit.readthedocs.io/en/1.0.3/index.html)
+
+geojson:
+
+* [More than you ever wanted to know about GeoJSON – Tom MacWright](https://macwright.org/2015/03/23/geojson-second-bite.html)
 
 Working with large files in Node & Python:
 
