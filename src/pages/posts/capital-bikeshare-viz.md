@@ -14,9 +14,9 @@ published: true
 template: post
 ---
 
-Here’s an Observable notebook I made that maps Capital Bikeshare trips in 2017 with a hexagonally binned heat map in MapboxGL. For mapping large datasets with some kind of encoded magnitude, I think you’ll almost always want a heat map, chloropleth, or even a [density contour plot](https://beta.observablehq.com/@pstuffa/making-maps-with-nyc-open-data). Bubble maps, while nifty, are not great for datasets where points might overlap. Here’s a [good discussion](http://mechanicalscribe.com/notes/binify-d3-topojson-tutorial/) on the topic, with a bit of explanation as to why hexbin maps present a nice alternative.
+Here’s an Observable notebook I made that maps Capital Bikeshare trips in 2017 with a hexagonally binned heat map in MapboxGL. For mapping large datasets with some kind of encoded magnitude, I think you’ll almost always want a heat map, chloropleth, or even a [density contour plot](https://beta.observablehq.com/@pstuffa/making-maps-with-nyc-open-data). Bubble maps, while nifty, are not great for datasets with points that might overlap. Here’s a [good discussion](http://mechanicalscribe.com/notes/binify-d3-topojson-tutorial/) on the topic, with a bit of explanation as to why hexbin maps present a nice alternative.
 
-\[[full]]
+[[full]]
 | <a href="https://beta.observablehq.com/@lorenries/where-did-people-start-end-capital-bikeshare-trips-in-2017" target="_blank"><img src="../../img/hexbin.png"></img></a>
 
 All of the visualization code is in [this Observable notebook](https://beta.observablehq.com/@lorenries/where-did-people-start-end-capital-bikeshare-trips-in-2017), along with some notes on the front-end process. The rest of this post is basically a cleaned up version of my notes from the data cleaning and processing stage.
