@@ -5,6 +5,7 @@
 @import 'scss/typography';
 @import 'scss/colors';
 @import 'scss/mixins';
+@import 'scss/code';
 body {
   background-color: $white;
   color: $black;
@@ -174,7 +175,8 @@ body {
   @include center;
   padding: $s2;
   p,
-  ul {
+  ul,
+  ol {
     line-height: $lh-copy;
   }
   a {

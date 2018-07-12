@@ -4,7 +4,6 @@ import Layout from '../components/layout'
 import PostHeader from '../components/PostHeader'
 import SEO from '../components/SEO'
 import { graphql } from 'gatsby'
-import 'prism-solarized-dark/prism-solarizeddark.css'
 
 export default function Work({ data }) {
   const { markdownRemark: post } = data
