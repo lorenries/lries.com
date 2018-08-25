@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
           based in Washington DC.
         </p>
         <p>
-          I used to develop and manage digital products as the Communications
+          Right now, I work as a front-end developer at <Link to="https://www.newamerica.org/">New America</Link>, where I specialize in data visualization. I used to develop and manage digital products as the Communications
           Officer for a human rights organization called the <Link to="https://www.wola.org/">Washington Office
           on Latin America (WOLA)</Link>. Before that, I reported on organized crime
           and security for <Link to="https://www.insightcrime.org/">InSight Crime</Link>.
