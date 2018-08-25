@@ -5,7 +5,6 @@
   "author": "Loren Riesenfeld",
   "dependencies": {
     "@observablehq/notebook-runtime": "^1.2.3",
-    "estimating-pose-in-the-browser-with-posenet-and-tensorflow-": "https://api.observablehq.com/@lorenries/estimating-pose-in-the-browser-with-posenet-and-tensorflow-.tgz?key=09ba466c5fa566a8",
     "gatsby": "^2.0.0-rc.0",
     "gatsby-image": "next",
     "gatsby-link": "^2.0.0-beta.3",
