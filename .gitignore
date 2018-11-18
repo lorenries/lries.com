@@ -5,3 +5,4 @@ dist/
 yarn-error.log
 /public
 /design
+package-lock.json
