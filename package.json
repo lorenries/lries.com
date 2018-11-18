@@ -22,7 +22,7 @@
     "gatsby-source-filesystem": "next",
     "gatsby-transformer-remark": "next",
     "gatsby-transformer-sharp": "next",
-    "history-of-nuclear-explosions": "https://api.observablehq.com/@lorenries/history-of-nuclear-explosions.tgz?key=bd326288619c8695",
+    "history-of-nuclear-explosions": "https://api.observablehq.com/@lorenries/history-of-nuclear-explosions.tgz",
     "node-sass": "^4.9.3",
     "path": "^0.12.7",
     "prism-solarized-dark": "^1.0.1",
