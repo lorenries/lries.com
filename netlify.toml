@@ -5,3 +5,7 @@
 [context.dry]
   command = ""
   publish = "/"
+  
+[[redirects]]
+  from = "/writing/installing-node-tiddlywiki-on-an-ubuntu-vps"
+  to = "/posts/installing-node-tiddlywiki-on-an-ubuntu-vps"
