@@ -78,15 +78,40 @@ body {
 }
 
 .homepage {
+  &__description {
+    padding-right: $s4;
+  }
+  &__image {
+    display: none;
+    width: 400px;
+    height: auto;
+    margin-top: $s4;
+    flex-shrink: 0;
+    img {
+      clip-path: url(#clipPath);
+      width: 100%;
+    }
+    @include large {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__title {
+    font-size: $f1;
+    margin: $s4 0;
+  }
+  @include large {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
   p {
     max-width: $mw7;
     line-height: $lh-copy;
     font-size: $f4;
   }
-}
-
-.homepage__title {
-  font-size: $f1;
 }
 
 // Project section
