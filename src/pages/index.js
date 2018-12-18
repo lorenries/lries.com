@@ -9,9 +9,8 @@ import PostsGrid from '../components/PostsGrid'
 import Link from '../components/Link'
 import ClipPath from '../components/ClipPath'
 
-class IndexPage extends React.Component {
-  state = { hovered: false }
-  imageLoaded = () => {
+const IndexPage = ({ data }) => {
+  const imageLoaded = () => {
     // this is a shite way of doing this but gatspy-image doesnt have any built in event handlers :(
     const imgWrapper = document.querySelector('.homepage__image')
     const img = imgWrapper.querySelector('img')
@@ -40,58 +39,55 @@ class IndexPage extends React.Component {
       }
     })
   }
-  render() {
-    const { data } = this.props
-    return (
-      <Layout>
-        <section className="homepage">
-          <div className="homepage__description">
-            <h2 className="homepage__title">Hi, I'm Loren</h2>
-            <p>
-              I'm a web developer, designer, and creative technologist currently
-              based in Washington DC.
-            </p>
-            <p>
-              Right now, I work as a front-end developer at{' '}
-              <Link to="https://www.newamerica.org/">New America</Link>, where I
-              specialize in data visualization. I used to develop and manage
-              digital products as the Communications Officer for a human rights
-              organization called the{' '}
-              <Link to="https://www.wola.org/">
-                Washington Office on Latin America (WOLA)
-              </Link>
-              . Before that, I reported on organized crime and security for{' '}
-              <Link to="https://www.insightcrime.org/">InSight Crime</Link>.
-            </p>
-          </div>
-          <div className="homepage__image">
-            <Img
-              fluid={data.file.childImageSharp.fluid}
-              style={{ width: '100%' }}
-              onLoad={this.imageLoaded}
-            />
-            <ClipPath />
-          </div>
-        </section>
-        {data.allMarkdownRemark.group.map(group => (
-          <PostsGrid
-            posts={group.edges}
-            type={group.fieldValue}
-            section={
-              group.fieldValue === 'work'
-                ? 'Work'
-                : group.fieldValue === 'posts'
-                ? 'Fun/Experiments/Writing'
-                : null
-            }
-            key={group.fieldValue}
+  return (
+    <Layout>
+      <section className="homepage">
+        <div className="homepage__description">
+          <h2 className="homepage__title">Hi, I'm Loren</h2>
+          <p>
+            I'm a web developer, designer, and creative technologist currently
+            based in Washington DC.
+          </p>
+          <p>
+            Right now, I work as a front-end developer at{' '}
+            <Link to="https://www.newamerica.org/">New America</Link>, where I
+            specialize in data visualization. I used to develop and manage
+            digital products as the Communications Officer for a human rights
+            organization called the{' '}
+            <Link to="https://www.wola.org/">
+              Washington Office on Latin America (WOLA)
+            </Link>
+            . Before that, I reported on organized crime and security for{' '}
+            <Link to="https://www.insightcrime.org/">InSight Crime</Link>.
+          </p>
+        </div>
+        <div className="homepage__image">
+          <Img
+            fluid={data.file.childImageSharp.fluid}
+            style={{ width: '100%' }}
+            onLoad={this.imageLoaded}
           />
-        ))}
-        <Contact />
-        <Footer />
-      </Layout>
-    )
-  }
+          <ClipPath />
+        </div>
+      </section>
+      {data.allMarkdownRemark.group.map(group => (
+        <PostsGrid
+          posts={group.edges}
+          type={group.fieldValue}
+          section={
+            group.fieldValue === 'work'
+              ? 'Work'
+              : group.fieldValue === 'posts'
+              ? 'Fun/Experiments/Writing'
+              : null
+          }
+          key={group.fieldValue}
+        />
+      ))}
+      <Contact />
+      <Footer />
+    </Layout>
+  )
 }
 
 export default IndexPage
