@@ -30,6 +30,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       case 'work':
         section = 'Work'
         break
+      case 'writing':
+        section = 'Writing'
+        break
     }
 
     createNodeField({

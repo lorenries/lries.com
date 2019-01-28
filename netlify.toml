@@ -7,5 +7,11 @@
   publish = "/"
   
 [[redirects]]
-  from = "/writing/installing-node-tiddlywiki-on-an-ubuntu-vps"
-  to = "/posts/installing-node-tiddlywiki-on-an-ubuntu-vps"
+  from = "/posts/installing-node-tiddlywiki-on-an-ubuntu-vps"
+  to = "/writing/installing-node-tiddlywiki-on-an-ubuntu-vps"
+[[redirects]]
+  from = "/posts/using-open-source-news-apps-for-non-profits-and-advocacy"
+  to = "/writing/using-open-source-news-apps-for-non-profits-and-advocacy"
+[[redirects]]
+  from = "/posts/closures"
+  to = "/writing/closures"

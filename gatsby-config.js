@@ -57,15 +57,17 @@ module.exports = {
               // base for generating different widths of each image.
               maxWidth: 1024,
               linkImagesToOriginal: false,
+              backgroundColor: '#fafafa',
+              withWebp: true,
             },
           },
           {
             resolve: 'gatsby-remark-custom-blocks',
             options: {
               blocks: {
-                full: 'post__breakout',
-                iframe: 'post__iframe',
-                'image-grid': 'post__image-grid',
+                full: { classes: 'post__breakout' },
+                iframe: { classes: 'post__iframe' },
+                'image-grid': { classes: 'post__image-grid' },
               },
             },
           },

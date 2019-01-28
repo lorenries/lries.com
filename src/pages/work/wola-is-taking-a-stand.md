@@ -1,12 +1,12 @@
 ---
-title: "Video: WOLA is Taking a Stand"
+title: 'Video: WOLA is Taking a Stand'
 date: 2017-11-12T12:25:09-05:00
 published: true
-template: "work"
-description: "A promo video showing how WOLA is fighting President Trump’s anti-immigrant genda"
+template: 'work'
+description: 'A promo video showing how WOLA is fighting President Trump’s anti-immigrant agenda'
 thumbnail: '../../img/wola-promo.png'
-roles: ["Producer"]
-link: "https://vimeo.com/240046792"
+roles: ['Producer']
+link: 'https://vimeo.com/240046792'
 ---
 
 This is a short promo video I produced for WOLA about our efforts to counter the Trump administration's anti-immigrant agenda. Even though there are some pretty terrible things happening in Washington, we wanted to try energize our community by showing why human rights are so important now, more than ever.

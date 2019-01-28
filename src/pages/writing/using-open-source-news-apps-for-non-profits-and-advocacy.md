@@ -21,7 +21,7 @@ Most of the web-based GUI charting tools out there are wrappers for reusable D3.
 
 ### Datawrapper
 
-Datawrapper is one of the first and best web-based GUI charting applications out there. Datawrapper is a for-profit company, but the core of the tool is completely open source. For organizations that require custom branding, the hosted version is pricey (around $230/month for custom branding and fonts).
+Datawrapper is one of the first and best web-based GUI charting applications out there. Datawrapper is a for-profit company, but the core of the tool is completely open source. For organizations that require custom branding, the hosted version is pricey (around \$230/month for custom branding and fonts).
 
 The open-source core does a bunch of things really well, but the paid version is much better—it has a bunch of really nice chart and map types that the company hasn't open-sourced. Fortunately, with a bit of customization, it's possible to get around these limitations.
 
@@ -31,9 +31,9 @@ Setting Datawrapper up involved a lot of trial and error. The setup instructions
 
 A couple of things you'll probably want to do that Greg doesn't cover:
 
-* Create a custom theme with default colors/fonts for your organization.
-* Extend the default (and now deprecated) mapping plugin by creating map templates for other regions—for us this was Latin America and Central America.
-* If Datawrapper's built-in export options don't work (they didn't for me), try Rubens Fernando's publish-embed plugin: https://github.com/rubensfernando/publish-embed.
+- Create a custom theme with default colors/fonts for your organization.
+- Extend the default (and now deprecated) mapping plugin by creating map templates for other regions—for us this was Latin America and Central America.
+- If Datawrapper's built-in export options don't work (they didn't for me), try Rubens Fernando's publish-embed plugin: https://github.com/rubensfernando/publish-embed.
 
 ### Chartbuilder
 
@@ -75,12 +75,12 @@ Other alternatives include [Call Congress by Ian Webster](https://github.com/typ
 
 For working with Congressional data, here’s a list of the best resources I’ve come across:
 
-* [ProPublica Congress API](https://projects.propublica.org/api-docs/congress-api/): one of the best API’s out there for getting Congressional data, including votes, members, bills, nominations, etc.
-* [ProPublica Staffers](https://github.com/propublica/staffers): an interactive and searchable House staffer directory
-* [ProPublica StateFace](https://github.com/propublica/stateface): a typeface of U.S. state shapes to use in web apps
-* [congress-legislators by @unitedstates](https://github.com/unitedstates/congress-legislators): structured data for all members of the United States Congress, 1789-present
-* [images by @unitedstates](https://github.com/unitedstates/images): public domain photos of Members of the United States Congress
-* [districts by @unitedstates](https://github.com/unitedstates/districts): GeoJSON and other shape files for the federal legislative districts of the US
+- [ProPublica Congress API](https://projects.propublica.org/api-docs/congress-api/): one of the best API’s out there for getting Congressional data, including votes, members, bills, nominations, etc.
+- [ProPublica Staffers](https://github.com/propublica/staffers): an interactive and searchable House staffer directory
+- [ProPublica StateFace](https://github.com/propublica/stateface): a typeface of U.S. state shapes to use in web apps
+- [congress-legislators by @unitedstates](https://github.com/unitedstates/congress-legislators): structured data for all members of the United States Congress, 1789-present
+- [images by @unitedstates](https://github.com/unitedstates/images): public domain photos of Members of the United States Congress
+- [districts by @unitedstates](https://github.com/unitedstates/districts): GeoJSON and other shape files for the federal legislative districts of the US
 
 ## Storing Knowledge with a Good Wiki
 

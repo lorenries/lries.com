@@ -6,10 +6,11 @@ import Layout from '../components/layout'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import PostsGrid from '../components/PostsGrid'
+import WritingList from '../components/WritingList'
 import Link from '../components/Link'
 import ClipPath from '../components/ClipPath'
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data: { writing, posts, image } }) => {
   const imageLoaded = () => {
     // this is a shite way of doing this but gatspy-image doesnt have any built in event handlers :(
     const imgWrapper = document.querySelector('.homepage__image')
@@ -45,15 +46,17 @@ const IndexPage = ({ data }) => {
         <div className="homepage__description">
           <h2 className="homepage__title">Hi, I'm Loren</h2>
           <p>
-            I'm a web developer, designer, and creative technologist currently
-            based in Washington DC.
+            I'm a web developer and designer currently based in Washington DC.
           </p>
           <p>
-            Right now, I work as a front-end developer at{' '}
+            Right now, I work as a full-stack developer at{' '}
             <Link to="https://www.newamerica.org/">New America</Link>, where I
-            specialize in data visualization. I used to develop and manage
-            digital products as the Communications Officer for a human rights
-            organization called the{' '}
+            lead our data visualization work and build/maintain our Django-based
+            CMS.
+          </p>
+          <p>
+            I used to develop and manage digital products as the Communications
+            Officer at a human rights organization called the{' '}
             <Link to="https://www.wola.org/">
               Washington Office on Latin America (WOLA)
             </Link>
@@ -63,14 +66,17 @@ const IndexPage = ({ data }) => {
         </div>
         <div className="homepage__image">
           <Img
-            fluid={data.file.childImageSharp.fluid}
+            fluid={image.childImageSharp.fluid}
             style={{ width: '100%' }}
-            onLoad={this.imageLoaded}
+            onLoad={imageLoaded}
           />
           <ClipPath />
         </div>
       </section>
-      {data.allMarkdownRemark.group.map(group => (
+      {writing.group.map(group => (
+        <WritingList posts={group.edges} key={group.fieldValue} />
+      ))}
+      {posts.group.map(group => (
         <PostsGrid
           posts={group.edges}
           type={group.fieldValue}
@@ -78,7 +84,7 @@ const IndexPage = ({ data }) => {
             group.fieldValue === 'work'
               ? 'Work'
               : group.fieldValue === 'posts'
-              ? 'Fun/Experiments/Writing'
+              ? 'Fun/Experiments'
               : null
           }
           key={group.fieldValue}
@@ -94,9 +100,42 @@ export default IndexPage
 
 export const allPostsQuery = graphql`
   query AllPostsQuery {
-    allMarkdownRemark(
+    writing: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { published: { eq: true } } }
+      filter: {
+        frontmatter: { published: { eq: true } }
+        fields: { type: { in: ["writing"] } }
+      }
+    ) {
+      group(field: fields___type, limit: 3) {
+        fieldValue
+        edges {
+          node {
+            id
+            fields {
+              slug
+              section
+              type
+            }
+            frontmatter {
+              title
+              description
+              template
+              date(formatString: "MMM D, YYYY")
+              published
+              link
+              redirect
+            }
+          }
+        }
+      }
+    }
+    posts: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: {
+        frontmatter: { published: { eq: true } }
+        fields: { type: { in: ["work", "posts"] } }
+      }
     ) {
       group(field: fields___type, limit: 6) {
         fieldValue
@@ -128,9 +167,9 @@ export const allPostsQuery = graphql`
         }
       }
     }
-    file(relativePath: { eq: "loren.jpg" }) {
+    image: file(relativePath: { eq: "loren.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 400) {
+        fluid(maxWidth: 800, maxHeight: 800) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }

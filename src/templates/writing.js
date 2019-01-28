@@ -5,7 +5,7 @@ import PostHeader from '../components/PostHeader'
 import SEO from '../components/SEO'
 import { graphql } from 'gatsby'
 
-export default function Work({ data }) {
+export default function Writing({ data }) {
   const { markdownRemark: post } = data
   return (
     <Layout>
@@ -18,8 +18,8 @@ export default function Work({ data }) {
   )
 }
 
-export const workQuery = graphql`
-  query WorkQuery($slug: String!) {
+export const writingQuery = graphql`
+  query WritingQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       fields {
@@ -33,13 +33,6 @@ export const workQuery = graphql`
         link
         description
         date(formatString: "MMMM D, YYYY")
-        thumbnail {
-          childImageSharp {
-            fluid(maxWidth: 640, maxHeight: 480, cropFocus: CENTER) {
-              src
-            }
-          }
-        }
       }
     }
   }

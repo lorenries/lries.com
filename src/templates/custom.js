@@ -43,7 +43,7 @@ export const customQuery = graphql`
         roles
         link
         description
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM D, YYYY")
         thumbnail {
           childImageSharp {
             fluid(maxWidth: 640, maxHeight: 480, cropFocus: CENTER) {

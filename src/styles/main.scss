@@ -133,13 +133,15 @@ body {
   justify-content: center;
 }
 
-.project-section a {
+.project-section a,
+.writing-section a {
   color: $black;
   text-decoration: none;
   display: block;
 }
 
-.project-section__header {
+.project-section__header,
+.writing-section__header {
   display: flex;
   justify-content: center;
   align-items: start;
@@ -152,11 +154,13 @@ body {
   }
 }
 
-.project-section__title {
+.project-section__title,
+.writing-section__title {
   font-size: $f3;
 }
 
-.project-section__read-more {
+.project-section__read-more,
+.writing-section__read-more {
   font-size: $f6;
   @include not-small {
     @include ph($s2);
@@ -171,7 +175,8 @@ body {
   }
 }
 
-.project-section__post-container {
+.project-section__post-container,
+.writing-section__post-container {
   line-height: $lh-copy;
   @include dim(0.8);
 }
@@ -182,7 +187,8 @@ body {
   margin-bottom: $s2;
 }
 
-.project-section__post-title {
+.project-section__post-title,
+.writing-section__post-title {
   display: inline;
   color: lighten($black, 10%);
   font-size: $f5;
@@ -194,20 +200,72 @@ body {
   padding-left: $s1;
 }
 
+.writing-section {
+  display: block;
+}
+
+.writing-section__post {
+  padding-bottom: $s2; // border-bottom: 1px solid $black;
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.writing-section__post-container {
+  display: flex;
+  flex-direction: column;
+  @include large {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.writing-section__post-title {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.writing-section__post-date {
+  font-size: $f6;
+  color: lighten($black, 30%);
+}
+
 // POSTS
 .post {
-  max-width: $measure-wide;
+  max-width: 34rem;
   @include center;
   padding: $s2;
+  h2 {
+    font-size: $f3;
+  }
+  h3 {
+    font-size: $f4;
+    @include large {
+      font-size: $f3;
+    }
+  }
   p,
   ul,
   ol {
-    line-height: $lh-copy;
+    font-size: $f5;
+    line-height: 1.6;
+    @include large {
+      font-size: $f4;
+    }
+  }
+  p:first-child {
+    margin-top: $s3;
   }
   a {
     color: $blue;
     text-decoration: underline;
     @include dim(0.5);
+  }
+  @include large {
+    max-width: 42.5rem;
   }
 }
 
@@ -215,6 +273,7 @@ body {
   font-size: $f6;
   display: flex;
   flex-direction: column;
+  @include pv($s3);
   span,
   time {
     padding-bottom: $s2;
@@ -225,7 +284,8 @@ body {
   font-size: $f3;
   font-weight: 800;
   line-height: $lh-title;
-  @include ph($s2);
+  @include pv($s3);
+  @include mv($s0);
   text-align: center;
   max-width: $measure-wide;
   @include not-small {
@@ -236,17 +296,18 @@ body {
 .post__link {
   display: flex;
   justify-content: center;
+  @include pv($s3);
 }
 
 .post__link a {
   @include button($s2, $s3, $f6);
-  margin-bottom: $s2;
 }
 
 .post__roles {
   padding-top: $s3;
   text-align: center;
   font-size: $f6;
+  @include pv($s3);
 }
 
 .post__role {
@@ -260,21 +321,24 @@ body {
 }
 
 .post__breakout {
-  margin: 1em -100%;
+  margin: $s3 -100%;
   /* old browsers fallback */
-  margin: 1em calc(50% - 50vw);
+  margin: $s3 calc(50% - 50vw);
   max-width: $mw8;
   transform: translateX(calc(50vw - 50%));
   @include ph($s2);
 }
 
 .gatsby-highlight {
-  margin: 1em -100%;
+  margin: $s3 -100%;
   /* old browsers fallback */
-  margin: 1em calc(50% - 50vw);
-  max-width: $mw7;
+  margin: $s3 calc(50% - 50vw);
+  max-width: 44.5rem;
   transform: translateX(calc(50vw - 50%));
   @include ph($s2);
+  pre {
+    border: 1px solid $grey;
+  }
 }
 
 .post__image-grid {
