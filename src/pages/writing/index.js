@@ -6,7 +6,7 @@ import { graphql } from 'gatsby'
 const WritingPage = ({ data }) => {
   return (
     <Layout>
-      <WritingList posts={data.allMarkdownRemark.edges} />
+      <WritingList posts={data.allMarkdownRemark.edges} standalone />
     </Layout>
   )
 }

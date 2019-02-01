@@ -1,6 +1,6 @@
 ---
 title: 'So You Want to Build a Graphics Team at Your Think Tank…'
-date: 2019-01-12T15:08:39.499Z
+date: 2019-01-4T15:08:39.499Z
 published: true
 template: post
 ---

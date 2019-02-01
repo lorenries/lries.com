@@ -1,6 +1,6 @@
 import React from 'react'
-import { Tweet } from 'react-twitter-widgets'
+import { TwitterTweetEmbed } from 'react-twitter-embed'
 
-const TwitterEmbed = ({ tweetid }) => <Tweet tweetId={tweetid} />
+const Tweet = ({ tweetid }) => <TwitterTweetEmbed tweetId={tweetid} />
 
-export default TwitterEmbed
+export default Tweet

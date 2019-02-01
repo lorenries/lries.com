@@ -1,16 +1,19 @@
 import React from 'react'
 import Link from '../components/Link'
 
-const WritingList = ({ posts }) => {
-  console.log(posts)
+const WritingList = ({ posts, standalone }) => {
   return (
     <section className="writing-section">
-      <div className="writing-section__header">
-        <h3 className="writing-section__title">Writing</h3>
-        <Link to={'/writing'}>
-          <span className="writing-section__read-more">All&rarr;</span>
-        </Link>
-      </div>
+      {standalone ? (
+        <h1 className="writing-section__title--standalone">Writing</h1>
+      ) : (
+        <div className="writing-section__header">
+          <h3 className="writing-section__title">Writing</h3>
+          <Link to={'/writing'}>
+            <span className="writing-section__read-more">All&rarr;</span>
+          </Link>
+        </div>
+      )}
       {posts.map(({ node }) => (
         <div className="writing-section__post" key={node.id}>
           <Link

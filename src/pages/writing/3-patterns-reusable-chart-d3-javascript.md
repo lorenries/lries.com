@@ -1,7 +1,7 @@
 ---
-title: '3 Patterns for Creating Reusable Charts with D3 and Javascript'
+title: 3 Patterns for Creating Reusable Charts with D3 and Javascript
 date: 2019-01-13T15:06:00.363Z
-published: true
+published: false
 template: post
 ---
 

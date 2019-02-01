@@ -5,7 +5,7 @@
   "author": "Loren Riesenfeld",
   "dependencies": {
     "@observablehq/notebook-runtime": "^1.2.3",
-    "animejs": "^2.2.0",
+    "dom-confetti": "0.0.15",
     "gatsby": "^2.0.0",
     "gatsby-image": "^2.0.0",
     "gatsby-link": "^2.0.0",
@@ -30,6 +30,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
+    "react-twitter-embed": "^2.0.4",
     "react-twitter-widgets": "^1.7.1",
     "rehype-react": "^3.0.2"
   },
@@ -43,9 +44,7 @@
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "prettier": "^1.12.0"
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"

@@ -3,9 +3,9 @@ date: 2018-06-02T00:57:40.000Z
 title: >-
   How Non-Profits Can Use Open Source News Applications to Improve 
   Communications Capacity
-thumbnail: ../../img/open-source-non-profits.png
+thumbnail: '../../img/open-source-non-profits.png'
 redirect: false
-template: custom
+template: 'custom'
 published: true
 ---
 

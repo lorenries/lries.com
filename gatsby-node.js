@@ -25,7 +25,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     let section
     switch (dirSplit[0]) {
       case 'posts':
-        section = 'Fun/Experiments/Writing'
+        section = 'Fun/Experiments'
         break
       case 'work':
         section = 'Work'

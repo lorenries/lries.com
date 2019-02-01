@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import PostHeader from '../components/PostHeader'
 import SEO from '../components/SEO'
+import Confetti from '../components/Confetti'
 import rehypeReact from 'rehype-react'
 import { graphql } from 'gatsby'
 import nuclearExplosions from './observables/nuclearExplosions'
@@ -24,6 +25,7 @@ export default function Custom({ data }) {
       <article className="post">
         <PostHeader post={post} />
         <div>{renderAst(post.htmlAst)}</div>
+        <Confetti />
       </article>
     </Layout>
   )

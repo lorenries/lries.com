@@ -7,7 +7,6 @@
 @import 'scss/mixins';
 @import 'scss/code';
 body {
-  background-color: $white;
   color: $black;
   font-family: $sans-serif;
 }
@@ -98,14 +97,11 @@ body {
     }
   }
   &__title {
-    font-size: $f1;
+    font-size: $f2;
     margin: $s4 0;
-  }
-  @include large {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    @include not-small {
+      font-size: $f1;
+    }
   }
   p {
     max-width: $mw7;
@@ -143,36 +139,27 @@ body {
 .project-section__header,
 .writing-section__header {
   display: flex;
-  justify-content: center;
-  align-items: start;
-  flex-direction: column;
-  @include not-small {
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    grid-column: 1 / -1;
-  }
+  justify-content: start;
+  align-items: center;
+  grid-column: 1 / -1;
 }
 
 .project-section__title,
 .writing-section__title {
   font-size: $f3;
+  &--standalone {
+    grid-column: 1 / -1;
+    font-size: $f3;
+    @include not-small {
+      font-size: $f2;
+    }
+  }
 }
 
 .project-section__read-more,
 .writing-section__read-more {
   font-size: $f6;
-  @include not-small {
-    @include ph($s2);
-  }
-}
-
-.project-section__title--standalone {
-  grid-column: 1 / -1;
-  font-size: $f3;
-  @include not-small {
-    font-size: $f2;
-  }
+  @include ph($s2);
 }
 
 .project-section__post-container,

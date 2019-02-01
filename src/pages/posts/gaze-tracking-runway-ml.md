@@ -1,11 +1,11 @@
 ---
-title: "Gaze Tracking with RunwayML"
-description: "Tracking gaze with a machine learning model and a webcam"
+title: 'Gaze Tracking with RunwayML'
+description: 'Tracking gaze with a machine learning model and a webcam'
 date: 2018-06-23
 published: true
-roles: ["Javascript", "Machine Learning"]
-template: "custom"
-thumbnail: "../../img/eyes.png"
+roles: ['Javascript', 'Machine Learning']
+template: 'custom'
+thumbnail: '../../img/eyes.png'
 ---
 
 I recently attended ITP Camp 2018, a 4 week crash course/playground that I've heard described as "a center for the recently possible," hosted at NYU's Interactive Telecommunications Program. It was a wonderful opportunity to make stuff, learn from people working on the cutting edge of art and engineering, and collaborate with people from diverse disciplines.
@@ -115,8 +115,8 @@ function drawGaze() {
           windowHeight
         )
       ),
-      posLeftPercetange = x / windowWidth * 100, // turn x pos into a percentage
-      posTopPercentage = y / windowHeight * 100 // turn y pos into a percentage
+      posLeftPercetange = (x / windowWidth) * 100, // turn x pos into a percentage
+      posTopPercentage = (y / windowHeight) * 100 // turn y pos into a percentage
 
     for (var i = 0; i < iris.length; i++) {
       iris[i].style.left = posLeftPercetange + '%'

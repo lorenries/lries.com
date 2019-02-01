@@ -57,7 +57,6 @@ module.exports = {
               // base for generating different widths of each image.
               maxWidth: 1024,
               linkImagesToOriginal: false,
-              backgroundColor: '#fafafa',
               withWebp: true,
             },
           },

@@ -8,7 +8,7 @@ const ProjectsPage = ({ data }) => {
     <Layout>
       <PostsGrid
         posts={data.allMarkdownRemark.edges}
-        section="Fun/Experiments/Writing"
+        section="Fun/Experiments"
         standalone
       />
     </Layout>

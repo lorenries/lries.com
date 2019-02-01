@@ -1,7 +1,7 @@
 ---
-title: "Closures in Javascript"
+title: 'Closures in Javascript'
 date: 2017-12-09T21:48:07-05:00
-published: true
+published: false
 template: post
 ---
 

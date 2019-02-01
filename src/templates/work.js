@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import PostHeader from '../components/PostHeader'
 import SEO from '../components/SEO'
+import Confetti from '../components/Confetti'
 import { graphql } from 'gatsby'
 
 export default function Work({ data }) {
@@ -13,6 +14,7 @@ export default function Work({ data }) {
       <article className="post">
         <PostHeader post={post} />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Confetti />
       </article>
     </Layout>
   )
