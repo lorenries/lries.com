@@ -7,7 +7,7 @@ class Contact extends React.Component {
     this.state = { email: '' }
   }
   componentDidMount() {
-    this.setState({ email: 'loren.riesenfeld@gmail.com' })
+    this.setState({ email: 'loren@lries.com' })
   }
   render() {
     return (
