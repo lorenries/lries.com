@@ -17,19 +17,12 @@ const IndexPage = ({ data: { writing, posts, image } }) => {
             I'm a web developer and designer currently based in Washington DC.
           </p>
           <p>
-            Right now, I work as a full-stack developer at{' '}
+            Right now, I work as a front end developer at{' '}
+            <Link to="https://www.theatlantic.com/">The Atlantic</Link>. Before
+            that, I was the full stack developer at{' '}
             <Link to="https://www.newamerica.org/">New America</Link>, where I
-            lead our data visualization work and build/maintain our Django-based
+            led data visualization projects and maintained a custom Django-based
             CMS.
-          </p>
-          <p>
-            I used to develop and manage digital products as the Communications
-            Officer at a human rights organization called the{' '}
-            <Link to="https://www.wola.org/">
-              Washington Office on Latin America (WOLA)
-            </Link>
-            . Before that, I reported on organized crime and security for{' '}
-            <Link to="https://www.insightcrime.org/">InSight Crime</Link>.
           </p>
         </div>
       </section>
