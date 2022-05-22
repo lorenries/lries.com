@@ -1,0 +1,24 @@
+---
+title: "Twitter Orchestra"
+description: "A musical map of live twitter data all over the world"
+date: 2018-06-23
+published: true
+category: fun
+roles: ["React", "Node.js", "WebGL"]
+image:
+  src: /images/twitter-orchestra.png
+  width: 1156
+  height: 902
+  alt: A screenshot of a musical map of live twitter data
+---
+
+This is a musical map of live twitter data I made at ITP Camp 2018. Synth sounds are triggered everytime someone tweets a geotagged tweet in order to create generative music from live social data.
+
+It uses Tone.js for the synths, React and MapboxGL for the map (with a custom overlay for the twitter data) on the frontend, and a Node/Express backend to stream tweets to the client. All of the [code is on Github](https://github.com/lorenries/live-tweet-map).
+
+<iframe
+  src="https://xenodochial-almeida-062fb2.netlify.com/"
+  width="1024"
+  height="768"
+  class="w-full h-96"
+></iframe>

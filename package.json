@@ -1,53 +1,39 @@
 {
   "name": "lries.com",
-  "description": "Loren's website",
-  "version": "1.0.0",
-  "author": "Loren Riesenfeld",
-  "dependencies": {
-    "@observablehq/notebook-runtime": "^1.2.3",
-    "dom-confetti": "0.0.15",
-    "gatsby": "^2.0.0",
-    "gatsby-image": "^2.0.0",
-    "gatsby-link": "^2.0.0",
-    "gatsby-plugin-catch-links": "^1.0.24",
-    "gatsby-plugin-offline": "^2.0.23",
-    "gatsby-plugin-react-helmet": "^2.0.0",
-    "gatsby-plugin-sass": "^2.0.0",
-    "gatsby-plugin-sharp": "^2.0.17",
-    "gatsby-remark-component": "^1.1.3",
-    "gatsby-remark-custom-blocks": "^2.0.0",
-    "gatsby-remark-embed-video": "^1.4.0",
-    "gatsby-remark-external-links": "0.0.4",
-    "gatsby-remark-images": "next",
-    "gatsby-remark-prismjs": "^3.0.0",
-    "gatsby-remark-responsive-iframe": "^2.0.0",
-    "gatsby-source-filesystem": "^2.0.0",
-    "gatsby-transformer-remark": "^2.2.0",
-    "gatsby-transformer-sharp": "^2.1.10",
-    "history-of-nuclear-explosions": "https://api.observablehq.com/@lorenries/history-of-nuclear-explosions.tgz",
-    "node-sass": "^4.9.3",
-    "prism-solarized-dark": "^1.0.1",
-    "prismjs": "^1.15.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-helmet": "^5.2.0",
-    "react-twitter-embed": "^2.0.4",
-    "react-twitter-widgets": "^1.7.1",
-    "rehype-react": "^3.0.2"
-  },
-  "keywords": [
-    "gatsby"
-  ],
+  "version": "3.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "start": "gatsby develop",
-    "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  "dependencies": {
+    "@mdx-js/loader": "^2.1.1",
+    "@mdx-js/react": "^2.1.1",
+    "classnames": "^2.3.1",
+    "contentlayer": "^0.2.5",
+    "date-fns": "^2.28.0",
+    "next": "^12.1.6",
+    "next-contentlayer": "^0.2.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "sharp": "^0.30.5"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.2.1",
+    "@tailwindcss/typography": "^0.5.2",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "autoprefixer": "^10.4.7",
+    "eslint": "^8.16.0",
+    "eslint-config-next": "^12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "postcss": "^8.4.14",
+    "prettier": "^2.6.2",
+    "rehype-prism-plus": "^1.4.0",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.6.4"
   }
 }
