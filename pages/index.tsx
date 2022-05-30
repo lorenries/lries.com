@@ -93,17 +93,20 @@ const Home = ({ writing, fun, work }: HomeProps) => {
 
       <section>
         <SectionHeader href="/fun">Fun/Experiments</SectionHeader>
-        <ul className="p-0 list-none grid grid-rows-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <ul className="p-0 list-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {fun.map((post) => (
             <li key={post.slug}>
               <article>
                 {post.image && (
                   <Link href={post.redirect ? post.link : post.url}>
-                    <a className="block relative w-full h-auto max-w-[640px] max-h-[480px]">
+                    <a className="block relative w-full aspect-[4/3]">
                       <Image
                         src={post.image.src}
-                        width={640}
-                        height={480}
+                        sizes="(min-width: 1024px) calc(100vw * 1/3 - 3.5rem), (min-width: 768px) calc(50vw - 2.5rem), calc(100vw - 1.5rem)"
+                        width={post.image.width}
+                        height={post.image.height}
+                        layout="fill"
+                        objectFit="cover"
                         alt={post.image.alt}
                       />
                     </a>
@@ -131,11 +134,14 @@ const Home = ({ writing, fun, work }: HomeProps) => {
               <article>
                 {post.image && (
                   <Link href={post.redirect ? post.link : post.url}>
-                    <a className="block relative w-full h-auto max-w-[640px] max-h-[480px]">
+                    <a className="block relative w-full aspect-[4/3]">
                       <Image
                         src={post.image.src}
-                        width={640}
-                        height={480}
+                        sizes="(min-width: 1024px) calc(100vw * 1/3 - 3.5rem), (min-width: 768px) calc(50vw - 2.5rem), calc(100vw - 1.5rem)"
+                        width={post.image.width}
+                        height={post.image.height}
+                        layout="fill"
+                        objectFit="cover"
                         alt={post.image.alt}
                       />
                     </a>

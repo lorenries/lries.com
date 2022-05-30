@@ -8,6 +8,7 @@ module.exports = withContentlayer({
   reactStrictMode: true,
   images: {
     domains: ["lries.com"],
+    minimumCacheTTL: 86400,
   },
   experimental: {
     legacyBrowsers: false,
